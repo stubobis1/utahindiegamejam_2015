@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -12,44 +13,72 @@ public class PlayerControl : MonoBehaviour
     public float moveForce = 365f;          // Amount of force added to move the player left and right.
     public float maxSpeed = 5f;             // The fastest the player can travel in the x axis.
     public AudioClip[] jumpClips;           // Array of clips for when the player jumps.
-    public float jumpForce = 1000f;         // Amount of force added when the player jumps.
-    public AudioClip[] taunts;              // Array of clips for when the player taunts.
-    public float tauntProbability = 50f;    // Chance of a taunt happening.
-    public float tauntDelay = 1f;           // Delay for when the taunt should happen.
+    public float jumpForce = 10f;         // Amount of force added when the player jumps.
 
 
-    private int tauntIndex;                 // The index of the taunts array indicating the most recent taunt.
+
     private Transform groundCheck;          // A position marking where to check if the player is grounded.
-    private bool grounded = false;          // Whether or not the player is grounded.
+    private bool isGrounded = false;
+    private grounded groundedScript;
     private Animator anim;                  // Reference to the player's animator component.
 
+    public int currentLayer = 1;
 
     void Awake()
     {
         // Setting up references.
-        groundCheck = transform.Find("groundCheck");
-        anim = GetComponent<Animator>();
-    }
 
+
+        groundCheck = transform.Find("groundCheck");
+        groundedScript = groundCheck.GetComponent<grounded>();
+        anim = GetComponent<Animator>();
+        GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
+        GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+    }
 
     void Update()
     {
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+        isGrounded = groundedScript.isGrounded;
 
         // If the jump button is pressed and the player is grounded then the player should jump.
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
             jump = true;
+        }
+
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            phase();
+
+        }
     }
 
-
+    bool happyLand = true;
+    void phase()
+    {
+        happyLand = !happyLand;
+        if (happyLand)
+        {
+            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = false;
+            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = true;
+        }
+        else
+        {
+            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
+            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+        }
+        
+        GetComponent<Camera>().backgroundColor = Color.black;
+    }
     void FixedUpdate()
     {
         // Cache the horizontal input.
         float h = Input.GetAxis("Horizontal");
 
         // The Speed animator parameter is set to the absolute value of the horizontal input.
-        anim.SetFloat("Speed", Mathf.Abs(h));
+        //anim.SetFloat("Speed", Mathf.Abs(h));
 
         // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
         if (h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
@@ -74,20 +103,26 @@ public class PlayerControl : MonoBehaviour
         if (jump)
         {
             // Set the Jump animator trigger parameter.
-            anim.SetTrigger("Jump");
+            //anim.SetTrigger("Jump");
 
             // Play a random jump audio clip.
-            int i = Random.Range(0, jumpClips.Length);
-            AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+            //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
             // Add a vertical force to the player.
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
 
+
             // Make sure the player can't jump again until the jump conditions from Update are satisfied.
             jump = false;
+
+            Debug.Log("Jump force added");
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SwitchLayer();
         }
     }
-
 
     void Flip()
     {
@@ -100,41 +135,46 @@ public class PlayerControl : MonoBehaviour
         transform.localScale = theScale;
     }
 
-
-    public IEnumerator Taunt()
+    void SwitchLayer()
     {
-        // Check the random chance of taunting.
-        float tauntChance = Random.Range(0f, 100f);
-        if (tauntChance > tauntProbability)
-        {
-            // Wait for tauntDelay number of seconds.
-            yield return new WaitForSeconds(tauntDelay);
+        //currentLayer = currentLayer == 1 ? 2 : 1;
 
-            // If there is no clip currently playing.
-            if (!GetComponent<AudioSource>().isPlaying)
-            {
-                // Choose a random, but different taunt.
-                tauntIndex = TauntRandom();
+        //SortingLayer[] zoneSortLayers = SortingLayer.layers;
 
-                // Play the new taunt.
-                GetComponent<AudioSource>().clip = taunts[tauntIndex];
-                GetComponent<AudioSource>().Play();
-            }
-        }
-    }
+        //foreach(SortingLayer sl in zoneSortLayers)
+        //{
+        //    if(sl.name == "Zone" + currentLayer + "Sort")
+        //    {
+        //        sl.value = 1;
+        //    }
+        //}
 
+        //List<GameObject> zones = new List<GameObject>(GameObject.FindGameObjectsWithTag("Zone"));
 
-    int TauntRandom()
-    {
-        // Choose a random index of the taunts array.
-        int i = Random.Range(0, taunts.Length);
+        //if (zones.Count <= 0)
+        //{
+        //    Debug.LogError("NO ZONES!");
+        //    return;
+        //}
 
-        // If it's the same as the previous taunt...
-        if (i == tauntIndex)
-            // ... try another random taunt.
-            return TauntRandom();
-        else
-            // Otherwise return this index.
-            return i;
+        //zones.ForEach(x =>
+        //{
+        //    Renderer[] zoneRenderers = x.GetComponentsInChildren<Renderer>();
+
+        //    if (x.name == currentZoneName)
+        //    {
+        //        foreach (Renderer r in zoneRenderers)
+        //        {
+        //            r.sortingOrder = 1;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        foreach(Renderer r in zoneRenderers)
+        //        {
+        //            r.sortingOrder = 2;
+        //        }
+        //    }
+        //});
     }
 }
