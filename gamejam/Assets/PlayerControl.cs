@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerControl : MonoBehaviour
     private grounded groundedScript;
     private Animator anim;                  // Reference to the player's animator component.
 
+    public int currentLayer = 1;
 
     void Awake()
     {
@@ -81,6 +83,11 @@ public class PlayerControl : MonoBehaviour
             // Make sure the player can't jump again until the jump conditions from Update are satisfied.
             jump = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SwitchLayer();
+        }
     }
     
     void Flip()
@@ -92,5 +99,48 @@ public class PlayerControl : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    void SwitchLayer()
+    {
+        //currentLayer = currentLayer == 1 ? 2 : 1;
+
+        //SortingLayer[] zoneSortLayers = SortingLayer.layers;
+
+        //foreach(SortingLayer sl in zoneSortLayers)
+        //{
+        //    if(sl.name == "Zone" + currentLayer + "Sort")
+        //    {
+        //        sl.value = 1;
+        //    }
+        //}
+
+        //List<GameObject> zones = new List<GameObject>(GameObject.FindGameObjectsWithTag("Zone"));
+
+        //if (zones.Count <= 0)
+        //{
+        //    Debug.LogError("NO ZONES!");
+        //    return;
+        //}
+
+        //zones.ForEach(x =>
+        //{
+        //    Renderer[] zoneRenderers = x.GetComponentsInChildren<Renderer>();
+
+        //    if (x.name == currentZoneName)
+        //    {
+        //        foreach (Renderer r in zoneRenderers)
+        //        {
+        //            r.sortingOrder = 1;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        foreach(Renderer r in zoneRenderers)
+        //        {
+        //            r.sortingOrder = 2;
+        //        }
+        //    }
+        //});
     }
 }
