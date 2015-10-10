@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 9727e51eb942e64489ca0e30672ab302
-timeCreated: 1444486814
+guid: d51332e696692184cbcb19454f97d606
+timeCreated: 1444497671
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StacheMaloneRunnin_strip4_0
-    21300002: StacheMaloneRunnin_strip4_1
-    21300004: StacheMaloneRunnin_strip4_2
-    21300006: StacheMaloneRunnin_strip4_3
+    21300000: StacheMaloneRunnin_strip5_0
+    21300002: StacheMaloneRunnin_strip5_1
+    21300004: StacheMaloneRunnin_strip5_2
+    21300006: StacheMaloneRunnin_strip5_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,7 +54,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: StacheMaloneRunnin_strip4_0
+    - name: StacheMaloneRunnin_strip5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -64,7 +64,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StacheMaloneRunnin_strip4_1
+    - name: StacheMaloneRunnin_strip5_1
       rect:
         serializedVersion: 2
         x: 110
@@ -74,7 +74,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StacheMaloneRunnin_strip4_2
+    - name: StacheMaloneRunnin_strip5_2
       rect:
         serializedVersion: 2
         x: 220
@@ -84,7 +84,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StacheMaloneRunnin_strip4_3
+    - name: StacheMaloneRunnin_strip5_3
       rect:
         serializedVersion: 2
         x: 330

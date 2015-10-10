@@ -50,19 +50,28 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = false;
-            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = true;
-            GetComponent<Camera>().backgroundColor = Color.yellow;
+            phase();
 
-        }
-        else if (Input.GetButtonDown("Fire2"))
-        {
-            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
-            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
-            GetComponent<Camera>().backgroundColor = Color.black;
         }
     }
 
+    bool happyLand = true;
+    void phase()
+    {
+        happyLand = !happyLand;
+        if (happyLand)
+        {
+            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = false;
+            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = true;
+        }
+        else
+        {
+            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
+            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+        }
+        
+        GetComponent<Camera>().backgroundColor = Color.black;
+    }
     void FixedUpdate()
     {
         // Cache the horizontal input.
