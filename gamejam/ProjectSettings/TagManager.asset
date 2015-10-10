@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Zone
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
+  - Zone1
+  - Zone2
   - 
   - 
   - 
@@ -41,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Back
+    uniqueID: 3033389437
+    locked: 0
+  - name: Front
+    uniqueID: 3291942559
+    locked: 0
+  - name: Player
+    uniqueID: 1523040495
     locked: 0
