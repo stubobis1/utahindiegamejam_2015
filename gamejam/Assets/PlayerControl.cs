@@ -138,7 +138,6 @@ public class PlayerControl : MonoBehaviour
 
     void SwitchLayer()
     {
-        Debug.LogError("SWITCH");
         int nextLayer = currentLayer == LayerMask.NameToLayer("Front") ? LayerMask.NameToLayer("Back") : LayerMask.NameToLayer("Front");
 
         Transform groundCheck = gameObject.transform.FindChild("groundCheck");

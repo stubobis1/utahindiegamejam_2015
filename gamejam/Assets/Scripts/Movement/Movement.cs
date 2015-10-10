@@ -6,8 +6,9 @@ public class Movement : MonoBehaviour {
     public float speed = 1.0f;
     public Vector2 direction = new Vector2(1, 0);
     public bool flying = false;
+    protected Animator anim;
 
-	public virtual void Start () {
+    public virtual void Start () {
         if(flying)
             GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 	}
