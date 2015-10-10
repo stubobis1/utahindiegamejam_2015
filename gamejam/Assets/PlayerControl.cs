@@ -28,8 +28,6 @@ public class PlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    
-
     void Update()
     {
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
@@ -41,7 +39,6 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded)
             jump = true;
     }
-
 
     void FixedUpdate()
     {
@@ -85,7 +82,6 @@ public class PlayerControl : MonoBehaviour
             jump = false;
         }
     }
-
     
     void Flip()
     {
@@ -97,7 +93,4 @@ public class PlayerControl : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-
-  
 }
