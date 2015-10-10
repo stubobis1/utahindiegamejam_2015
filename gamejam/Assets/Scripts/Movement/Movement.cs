@@ -9,12 +9,18 @@ public class Movement : MonoBehaviour {
     protected Animator anim;
 
     public virtual void Start () {
+        anim = GetComponent<Animator>();
+
         if(flying)
             GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
         GetComponent<Rigidbody2D>().velocity = speed * direction;
+    }
+
+    public virtual void FixedUpdate() {
+        anim.SetFloat("Speed", Mathf.Abs(speed));
     }
 }
