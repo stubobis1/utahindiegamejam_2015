@@ -51,8 +51,16 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             phase();
-
         }
+
+        if (layerSwitchCooldown <= 0.0f && Input.GetKeyDown(KeyCode.L))
+        {
+            SwitchLayer();
+            layerSwitchCooldown = 0.5f;
+        }
+
+        if (layerSwitchCooldown > 0)
+            layerSwitchCooldown -= Time.deltaTime;
     }
 
     bool happyLand = true;
@@ -69,15 +77,6 @@ public class PlayerControl : MonoBehaviour
             GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
             GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
         }
-
-        if (layerSwitchCooldown <= 0.0f && Input.GetKeyDown(KeyCode.L))
-        {
-            SwitchLayer();
-            layerSwitchCooldown = 0.5f;
-        }
-
-        if(layerSwitchCooldown > 0)
-            layerSwitchCooldown -= Time.deltaTime;
     }
     void FixedUpdate()
     {
