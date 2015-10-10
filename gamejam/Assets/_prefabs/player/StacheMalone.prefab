@@ -14,6 +14,7 @@ GameObject:
   - 50: {fileID: 5050060}
   - 60: {fileID: 6029480}
   - 58: {fileID: 5807488}
+  - 114: {fileID: 11428826}
   m_Layer: 8
   m_Name: StacheMalone
   m_TagString: Untagged
@@ -46,8 +47,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: 1.66999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: .03125, y: .40625, z: 0}
+  m_LocalScale: {x: 3.375, y: 3.375, z: 3.375}
   m_Children:
   - {fileID: 430504}
   m_Father: {fileID: 0}
@@ -168,6 +169,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+--- !u!114 &11428826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2ed81fca1ac3749a83e9e78e6d17fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelPerfectCamera: {fileID: 0}
+  fitType: 0
+  parallaxLayer: 0
+  pixelScale: 1
+  runContinously: 1
+  useParentTransform: 0
+  displayGrid: 0
 --- !u!114 &11444336
 MonoBehaviour:
   m_ObjectHideFlags: 1
