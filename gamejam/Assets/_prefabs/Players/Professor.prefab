@@ -72,10 +72,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146034}
-  m_Mass: 10
+  m_Mass: 2
   m_LinearDrag: .5
   m_AngularDrag: .5
-  m_GravityScale: 5
+  m_GravityScale: 7.1500001
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -182,10 +182,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 1
   jump: 0
-  moveForce: 1000
+  moveForce: 200
   maxSpeed: 10
   jumpClips: []
-  jumpForce: 10000
+  jumpForce: 3000
   currentLayer: 1
 --- !u!114 &11489574
 MonoBehaviour:
@@ -241,6 +241,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: jumpForce
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveForce
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 7.1500001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

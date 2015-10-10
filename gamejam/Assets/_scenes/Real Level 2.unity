@@ -283,6 +283,30 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -.0154411793
       objectReference: {fileID: 0}
+    - target: {fileID: 175736, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 103378, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 124404, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 149888, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 186368, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 122828, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
   m_IsPrefabParent: 0
@@ -369,6 +393,30 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -.0472925901
       objectReference: {fileID: 0}
+    - target: {fileID: 175736, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103378, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 124404, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 149888, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 186368, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 122828, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
   m_IsPrefabParent: 0
@@ -448,7 +496,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1593628994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bad Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +525,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 470516, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.203125
+      value: 5.296875
       objectReference: {fileID: 0}
     - target: {fileID: 470516, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: m_LocalPosition.y
@@ -511,6 +559,14 @@ Prefab:
       propertyPath: pixelPerfectCamera
       value: 
       objectReference: {fileID: 1959197790}
+    - target: {fileID: 104442, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146034, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
   m_IsPrefabParent: 0
@@ -678,7 +734,7 @@ GameObject:
   - 4: {fileID: 2045996977}
   m_Layer: 0
   m_Name: GoodLevel
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
