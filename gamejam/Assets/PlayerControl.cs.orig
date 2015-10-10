@@ -13,79 +13,84 @@ public class PlayerControl : MonoBehaviour
     public float moveForce = 365f;          // Amount of force added to move the player left and right.
     public float maxSpeed = 5f;             // The fastest the player can travel in the x axis.
     public AudioClip[] jumpClips;           // Array of clips for when the player jumps.
-<<<<<<< HEAD
-    public float jumpForce = 1000f;         // Amount of force added when the player jumps.
-    
-=======
     public float jumpForce = 10f;         // Amount of force added when the player jumps.
-    public AudioClip[] taunts;              // Array of clips for when the player taunts.
-    public float tauntProbability = 50f;    // Chance of a taunt happening.
-    public float tauntDelay = 1f;           // Delay for when the taunt should happen.
 
-    
-    
 
-    private int tauntIndex;                 // The index of the taunts array indicating the most recent taunt.
->>>>>>> af5af02058fce261d66ed7e3d0d6067f4387fba2
+
     private Transform groundCheck;          // A position marking where to check if the player is grounded.
-    private bool grounded = false;          // Whether or not the player is grounded.
+    private bool isGrounded = false;
     private grounded groundedScript;
     private Animator anim;                  // Reference to the player's animator component.
 
-    public int currentLayer = 1;
+    public int currentLayer;
+    float layerSwitchCooldown = 0.0f;
 
     void Awake()
     {
         // Setting up references.
-        
 
         groundCheck = transform.Find("groundCheck");
         groundedScript = groundCheck.GetComponent<grounded>();
         anim = GetComponent<Animator>();
         GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
         GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+        currentLayer = LayerMask.NameToLayer("Front");
     }
 
     void Update()
     {
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-<<<<<<< HEAD
-        grounded = groundedScript.isGrounded;
+        isGrounded = groundedScript.isGrounded;
 
         // If the jump button is pressed and the player is grounded then the player should jump.
-        Debug.Log(grounded);
-        Debug.Log("testing");
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
             jump = true;
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            phase();
+
+        }
     }
-=======
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));        
-        // If the jump button is pressed and the player is grounded then the player should jump.
-        if (Input.GetButtonDown ("Jump") && grounded) {
-			Debug.Log ("Jump key pressed");
-			jump = true;
-		}
-        if (Input.GetKeyDown("space")) { 
+
+    bool happyLand = true;
+    void phase()
+    {
+        happyLand = !happyLand;
+        if (happyLand)
+        {
             GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = false;
             GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = true;
-            GetComponent<Camera>().backgroundColor = Color.yellow;
-
         }
-        else if (Input.GetKeyUp("space")){
+        else
+        {
             GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
             GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
-            GetComponent<Camera>().backgroundColor = Color.black;
         }
-        }
->>>>>>> af5af02058fce261d66ed7e3d0d6067f4387fba2
+<<<<<<< HEAD
+        
+        GetComponent<Camera>().backgroundColor = Color.black;
+=======
 
+        if (layerSwitchCooldown <= 0.0f && Input.GetKeyDown(KeyCode.L))
+        {
+            SwitchLayer();
+            layerSwitchCooldown = 0.5f;
+        }
+
+        if(layerSwitchCooldown > 0)
+            layerSwitchCooldown -= Time.deltaTime;
+>>>>>>> 877c7b17310f34ef2a2a68d2c9a8d40f030d13e7
+    }
     void FixedUpdate()
     {
         // Cache the horizontal input.
         float h = Input.GetAxis("Horizontal");
 
         // The Speed animator parameter is set to the absolute value of the horizontal input.
-        //anim.SetFloat("Speed", Mathf.Abs(h));
+        anim.SetFloat("Speed", Mathf.Abs(h));
 
         // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
         if (h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
@@ -113,11 +118,7 @@ public class PlayerControl : MonoBehaviour
             //anim.SetTrigger("Jump");
 
             // Play a random jump audio clip.
-<<<<<<< HEAD
-=======
-            int i = Random.Range(0, jumpClips.Length);
             //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
->>>>>>> af5af02058fce261d66ed7e3d0d6067f4387fba2
 
             // Add a vertical force to the player.
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
@@ -126,15 +127,10 @@ public class PlayerControl : MonoBehaviour
             // Make sure the player can't jump again until the jump conditions from Update are satisfied.
             jump = false;
 
-			Debug.Log("Jump force added");
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SwitchLayer();
+            Debug.Log("Jump force added");
         }
     }
-    
+
     void Flip()
     {
         // Switch the way the player is labelled as facing.
@@ -148,44 +144,33 @@ public class PlayerControl : MonoBehaviour
 
     void SwitchLayer()
     {
-        //currentLayer = currentLayer == 1 ? 2 : 1;
+        int nextLayer = currentLayer == LayerMask.NameToLayer("Front") ? LayerMask.NameToLayer("Back") : LayerMask.NameToLayer("Front");
 
-        //SortingLayer[] zoneSortLayers = SortingLayer.layers;
+        Transform groundCheck = gameObject.transform.FindChild("groundCheck");
 
-        //foreach(SortingLayer sl in zoneSortLayers)
-        //{
-        //    if(sl.name == "Zone" + currentLayer + "Sort")
-        //    {
-        //        sl.value = 1;
-        //    }
-        //}
+        if (groundCheck == null)
+            Debug.LogError("GROUNDCHECK MISSING!");
 
-        //List<GameObject> zones = new List<GameObject>(GameObject.FindGameObjectsWithTag("Zone"));
+        RaycastHit2D[] hits = Physics2D.RaycastAll(groundCheck.transform.position, new Vector3(0, 0, 1), 1, 1 << nextLayer);
 
-        //if (zones.Count <= 0)
-        //{
-        //    Debug.LogError("NO ZONES!");
-        //    return;
-        //}
+        foreach (RaycastHit2D rh in hits)
+            if (rh.transform.tag != "Enemy")
+                return;
 
-        //zones.ForEach(x =>
-        //{
-        //    Renderer[] zoneRenderers = x.GetComponentsInChildren<Renderer>();
+        gameObject.layer = currentLayer = nextLayer;
 
-        //    if (x.name == currentZoneName)
-        //    {
-        //        foreach (Renderer r in zoneRenderers)
-        //        {
-        //            r.sortingOrder = 1;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        foreach(Renderer r in zoneRenderers)
-        //        {
-        //            r.sortingOrder = 2;
-        //        }
-        //    }
-        //});
+        GameObject[] zones = GameObject.FindGameObjectsWithTag("Zone");
+
+        foreach (GameObject go in zones)
+        {
+            SpriteRenderer[] zoneRenderers = go.GetComponentsInChildren<SpriteRenderer>();
+
+            if (zoneRenderers[0].sortingLayerName == "FrontSort")
+                foreach (SpriteRenderer sr in zoneRenderers)
+                    sr.sortingLayerName = "BackSort";
+            else
+                foreach (SpriteRenderer sr in zoneRenderers)
+                    sr.sortingLayerName = "FrontSort";
+        }
     }
 }

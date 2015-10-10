@@ -22,7 +22,8 @@ public class PlayerControl : MonoBehaviour
     private grounded groundedScript;
     private Animator anim;                  // Reference to the player's animator component.
 
-    public int currentLayer = 1;
+    public int currentLayer;
+    float layerSwitchCooldown = 0.0f;
 
     void Awake()
     {
@@ -33,6 +34,7 @@ public class PlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
         GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
         GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+        currentLayer = LayerMask.NameToLayer("Front");
     }
 
     void Update()
@@ -67,8 +69,15 @@ public class PlayerControl : MonoBehaviour
             GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
             GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
         }
-        
-        GetComponent<Camera>().backgroundColor = Color.black;
+
+        if (layerSwitchCooldown <= 0.0f && Input.GetKeyDown(KeyCode.L))
+        {
+            SwitchLayer();
+            layerSwitchCooldown = 0.5f;
+        }
+
+        if(layerSwitchCooldown > 0)
+            layerSwitchCooldown -= Time.deltaTime;
     }
     void FixedUpdate()
     {
@@ -115,11 +124,6 @@ public class PlayerControl : MonoBehaviour
 
             Debug.Log("Jump force added");
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SwitchLayer();
-        }
     }
 
     void Flip()
@@ -135,44 +139,33 @@ public class PlayerControl : MonoBehaviour
 
     void SwitchLayer()
     {
-        //currentLayer = currentLayer == 1 ? 2 : 1;
+        int nextLayer = currentLayer == LayerMask.NameToLayer("Front") ? LayerMask.NameToLayer("Back") : LayerMask.NameToLayer("Front");
 
-        //SortingLayer[] zoneSortLayers = SortingLayer.layers;
+        Transform groundCheck = gameObject.transform.FindChild("groundCheck");
 
-        //foreach(SortingLayer sl in zoneSortLayers)
-        //{
-        //    if(sl.name == "Zone" + currentLayer + "Sort")
-        //    {
-        //        sl.value = 1;
-        //    }
-        //}
+        if (groundCheck == null)
+            Debug.LogError("GROUNDCHECK MISSING!");
 
-        //List<GameObject> zones = new List<GameObject>(GameObject.FindGameObjectsWithTag("Zone"));
+        RaycastHit2D[] hits = Physics2D.RaycastAll(groundCheck.transform.position, new Vector3(0, 0, 1), 1, 1 << nextLayer);
 
-        //if (zones.Count <= 0)
-        //{
-        //    Debug.LogError("NO ZONES!");
-        //    return;
-        //}
+        foreach (RaycastHit2D rh in hits)
+            if (rh.transform.tag != "Enemy")
+                return;
 
-        //zones.ForEach(x =>
-        //{
-        //    Renderer[] zoneRenderers = x.GetComponentsInChildren<Renderer>();
+        gameObject.layer = currentLayer = nextLayer;
 
-        //    if (x.name == currentZoneName)
-        //    {
-        //        foreach (Renderer r in zoneRenderers)
-        //        {
-        //            r.sortingOrder = 1;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        foreach(Renderer r in zoneRenderers)
-        //        {
-        //            r.sortingOrder = 2;
-        //        }
-        //    }
-        //});
+        GameObject[] zones = GameObject.FindGameObjectsWithTag("Zone");
+
+        foreach (GameObject go in zones)
+        {
+            SpriteRenderer[] zoneRenderers = go.GetComponentsInChildren<SpriteRenderer>();
+
+            if (zoneRenderers[0].sortingLayerName == "FrontSort")
+                foreach (SpriteRenderer sr in zoneRenderers)
+                    sr.sortingLayerName = "BackSort";
+            else
+                foreach (SpriteRenderer sr in zoneRenderers)
+                    sr.sortingLayerName = "FrontSort";
+        }
     }
 }
