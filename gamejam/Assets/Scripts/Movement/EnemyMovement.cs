@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Movement : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour {
 
     public float speed = 1.0f;
     public Vector2 direction = new Vector2(1, 0);
