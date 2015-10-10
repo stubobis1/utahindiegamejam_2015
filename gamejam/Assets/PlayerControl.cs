@@ -13,10 +13,12 @@ public class PlayerControl : MonoBehaviour
     public float moveForce = 365f;          // Amount of force added to move the player left and right.
     public float maxSpeed = 5f;             // The fastest the player can travel in the x axis.
     public AudioClip[] jumpClips;           // Array of clips for when the player jumps.
-    public float jumpForce = 1000f;         // Amount of force added when the player jumps.
-    
+    public float jumpForce = 10f;         // Amount of force added when the player jumps.
+
+
+
     private Transform groundCheck;          // A position marking where to check if the player is grounded.
-    private bool grounded = false;          // Whether or not the player is grounded.
+    private bool isGrounded = false;
     private grounded groundedScript;
     private Animator anim;                  // Reference to the player's animator component.
 
@@ -25,21 +27,40 @@ public class PlayerControl : MonoBehaviour
     void Awake()
     {
         // Setting up references.
+
+
         groundCheck = transform.Find("groundCheck");
         groundedScript = groundCheck.GetComponent<grounded>();
         anim = GetComponent<Animator>();
+        GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
+        GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
     }
 
     void Update()
     {
         // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-        grounded = groundedScript.isGrounded;
+        isGrounded = groundedScript.isGrounded;
 
         // If the jump button is pressed and the player is grounded then the player should jump.
-        Debug.Log(grounded);
-        Debug.Log("testing");
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
             jump = true;
+        }
+
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = false;
+            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = true;
+            GetComponent<Camera>().backgroundColor = Color.yellow;
+
+        }
+        else if (Input.GetButtonDown("Fire2"))
+        {
+            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
+            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+            GetComponent<Camera>().backgroundColor = Color.black;
+        }
     }
 
     void FixedUpdate()
@@ -48,7 +69,7 @@ public class PlayerControl : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
 
         // The Speed animator parameter is set to the absolute value of the horizontal input.
-        anim.SetFloat("Speed", Mathf.Abs(h));
+        //anim.SetFloat("Speed", Mathf.Abs(h));
 
         // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
         if (h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
@@ -73,15 +94,19 @@ public class PlayerControl : MonoBehaviour
         if (jump)
         {
             // Set the Jump animator trigger parameter.
-            anim.SetTrigger("Jump");
+            //anim.SetTrigger("Jump");
 
             // Play a random jump audio clip.
+            //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
             // Add a vertical force to the player.
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
 
+
             // Make sure the player can't jump again until the jump conditions from Update are satisfied.
             jump = false;
+
+            Debug.Log("Jump force added");
         }
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -89,7 +114,7 @@ public class PlayerControl : MonoBehaviour
             SwitchLayer();
         }
     }
-    
+
     void Flip()
     {
         // Switch the way the player is labelled as facing.
