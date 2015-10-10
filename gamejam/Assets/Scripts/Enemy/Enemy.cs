@@ -3,17 +3,17 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-    public bool frontSwitch = false;
-    public bool backSwitch = false;
+    [HideInInspector]
     public GameObject target;
 
-    // Use this for initialization
+    public bool frontSwitch = false;
+    public bool backSwitch = false;
+
     void Start () {
         target = GameObject.FindGameObjectWithTag("Player");
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
 
     }
 
@@ -22,20 +22,21 @@ public class Enemy : MonoBehaviour {
         if (frontSwitch && layer == "Front")
         {
             Debug.Log(gameObject.name + ": " + "FRONT");
-            //this.gameObject.layer = 
+            this.gameObject.layer = LayerMask.NameToLayer("Front");
         }
             
         else if (backSwitch && layer == "Back")
+        {
             Debug.Log(gameObject.name + ": " + "BACK");
+            this.gameObject.layer = LayerMask.NameToLayer("Front");
+        }    
     }
 
-    public virtual void Activate(string layer)
-    {
+    public virtual void Activate(string layer) {
 
     }
 
-    public virtual void OnCollisionEnter(Collision collision)
-    {
+    public virtual void OnCollisionEnter(Collision collision) {
 
     }
 }

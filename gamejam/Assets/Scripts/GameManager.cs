@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+        zoneChildren = backZone.GetComponentsInChildren<SpriteRenderer>();
+
         foreach(SpriteRenderer sr in zoneChildren)
         {
             if (sr.GetInstanceID() != frontZone.GetInstanceID())

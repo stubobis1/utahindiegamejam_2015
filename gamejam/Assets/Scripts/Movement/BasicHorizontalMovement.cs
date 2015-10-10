@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BasicHorizontalMovement : Movement {
+public class BasicHorizontalMovement : EnemyMovement {
 
     public float maxLeftMovement = 25.0f;
     public float maxRightMovement = 25.0f;
@@ -35,8 +35,4 @@ public class BasicHorizontalMovement : Movement {
 
         base.Update();
 	}
-
-    public override void FixedUpdate() {
-        base.FixedUpdate();
-    }
 }
