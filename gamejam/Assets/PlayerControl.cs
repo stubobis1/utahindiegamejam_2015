@@ -28,7 +28,6 @@ public class PlayerControl : MonoBehaviour
     {
         // Setting up references.
 
-
         groundCheck = transform.Find("groundCheck");
         groundedScript = groundCheck.GetComponent<grounded>();
         anim = GetComponent<Animator>();
@@ -46,7 +45,6 @@ public class PlayerControl : MonoBehaviour
         {
             jump = true;
         }
-
 
         if (Input.GetButtonDown("Fire2"))
         {
@@ -69,7 +67,7 @@ public class PlayerControl : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
 
         // The Speed animator parameter is set to the absolute value of the horizontal input.
-        //anim.SetFloat("Speed", Mathf.Abs(h));
+        anim.SetFloat("Speed", Mathf.Abs(h));
 
         // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
         if (h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
