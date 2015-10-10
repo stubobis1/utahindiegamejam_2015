@@ -3,24 +3,26 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-    public GameObject zone1;
-    public GameObject zone2;
+    public GameObject frontZone;
+    public GameObject backZone;
 
 	void Awake () {
-        if (zone1 == null || zone2 == null)
+        if (frontZone == null || backZone == null)
             Debug.LogError("ZONES MISSING IN GAME MANAGER");
 
-        SpriteRenderer[] spriteRenderers = zone1.GetComponentsInChildren<SpriteRenderer>();
+        foreach(Transform t in frontZone.transform)
+        {
+            GameObject go = t.gameObject;
+            go.layer = LayerMask.NameToLayer("Front");
+            go.GetComponent<SpriteRenderer>().sortingLayerName = "FrontSort";
+        }
 
-        Debug.Log(spriteRenderers.Length);
-
-        foreach (SpriteRenderer s in spriteRenderers)
-            s.sortingLayerName = "Front";
-
-        spriteRenderers = zone2.GetComponentsInChildren<SpriteRenderer>();
-
-        foreach (SpriteRenderer s in spriteRenderers)
-            s.sortingLayerName = "Back";
+        foreach(Transform t in backZone.transform)
+        {
+            GameObject go = t.gameObject;
+            go.layer = LayerMask.NameToLayer("Back");
+            go.GetComponent<SpriteRenderer>().sortingLayerName = "BackSort";
+        }
     }
 	
 	// Update is called once per frame

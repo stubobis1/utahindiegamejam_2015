@@ -15,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Zone1
-  - Zone2
+  - Front
+  - Back
+  - 
   - 
   - 
   - 
@@ -43,12 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Back
+  - name: BackSort
     uniqueID: 3033389437
     locked: 0
-  - name: Front
+  - name: FrontSort
     uniqueID: 3291942559
     locked: 0
-  - name: Player
+  - name: TopSort
     uniqueID: 1523040495
     locked: 0
