@@ -1,54 +1,76 @@
 fileFormatVersion: 2
-guid: efd2475c202ab054d9b8436247ff3e89
-timeCreated: 1444504418
+guid: 77bcbd516d2291a41a3411458c250e15
+timeCreated: 1444515947
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tile set_0
-    21300002: tile set_1
-    21300004: tile set_2
-    21300006: tile set_3
-    21300008: tile set_4
-    21300010: tile set_5
-    21300012: tile set_6
-    21300014: tile set_7
-    21300016: tile set_8
-    21300018: tile set_9
-    21300020: tile set_10
-    21300022: tile set_11
-    21300024: tile set_12
-    21300026: tile set_13
-    21300028: tile set_14
-    21300030: tile set_15
-    21300032: tile set_16
-    21300034: tile set_17
-    21300036: tile set_18
-    21300038: tile set_19
-    21300040: tile set_20
-    21300042: tile set_21
-    21300044: tile set_22
-    21300046: tile set_23
-    21300048: tile set_24
-    21300050: tile set_25
-    21300052: tile set_26
-    21300054: tile set_27
-    21300056: tile set_28
-    21300058: tile set_29
-    21300060: tile set_30
-    21300062: tile set_31
-    21300064: tile set_32
-    21300066: tile set_33
-    21300068: tile set_34
-    21300070: tile set_35
-    21300072: tile set_36
-    21300074: tile set_37
-    21300076: tile set_38
-    21300078: tile set_39
-    21300080: tile set_40
-    21300082: tile set_41
-    21300084: tile set_42
-    21300086: tile set_43
-    21300088: tile set_44
+    21300000: jimmy tile set_0
+    21300002: jimmy tile set_1
+    21300004: jimmy tile set_2
+    21300006: jimmy tile set_3
+    21300008: jimmy tile set_4
+    21300010: jimmy tile set_5
+    21300012: jimmy tile set_6
+    21300014: jimmy tile set_7
+    21300016: jimmy tile set_8
+    21300018: jimmy tile set_9
+    21300020: jimmy tile set_10
+    21300022: jimmy tile set_11
+    21300024: jimmy tile set_12
+    21300026: jimmy tile set_13
+    21300028: jimmy tile set_14
+    21300030: jimmy tile set_15
+    21300032: jimmy tile set_16
+    21300034: jimmy tile set_17
+    21300036: jimmy tile set_18
+    21300038: jimmy tile set_19
+    21300040: jimmy tile set_20
+    21300042: jimmy tile set_21
+    21300044: jimmy tile set_22
+    21300046: jimmy tile set_23
+    21300048: jimmy tile set_24
+    21300050: jimmy tile set_25
+    21300052: jimmy tile set_26
+    21300054: jimmy tile set_27
+    21300056: jimmy tile set_28
+    21300058: jimmy tile set_29
+    21300060: jimmy tile set_30
+    21300062: jimmy tile set_31
+    21300064: jimmy tile set_32
+    21300066: jimmy tile set_33
+    21300068: jimmy tile set_34
+    21300070: jimmy tile set_35
+    21300072: jimmy tile set_36
+    21300074: jimmy tile set_37
+    21300076: jimmy tile set_38
+    21300078: jimmy tile set_39
+    21300080: jimmy tile set_40
+    21300082: jimmy tile set_41
+    21300084: jimmy tile set_42
+    21300086: jimmy tile set_43
+    21300088: jimmy tile set_44
+    21300090: jimmy tile set_45
+    21300092: jimmy tile set_46
+    21300094: jimmy tile set_47
+    21300096: jimmy tile set_48
+    21300098: jimmy tile set_49
+    21300100: jimmy tile set_50
+    21300102: jimmy tile set_51
+    21300104: jimmy tile set_52
+    21300106: jimmy tile set_53
+    21300108: jimmy tile set_54
+    21300110: jimmy tile set_55
+    21300112: jimmy tile set_56
+    21300114: jimmy tile set_57
+    21300116: jimmy tile set_58
+    21300118: jimmy tile set_59
+    21300120: jimmy tile set_60
+    21300122: jimmy tile set_61
+    21300124: jimmy tile set_62
+    21300126: jimmy tile set_63
+    21300128: jimmy tile set_64
+    21300130: jimmy tile set_65
+    21300132: jimmy tile set_66
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -95,7 +117,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: tile set_0
+    - name: jimmy tile set_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,7 +127,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_1
+    - name: jimmy tile set_1
       rect:
         serializedVersion: 2
         x: 32
@@ -115,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_2
+    - name: jimmy tile set_2
       rect:
         serializedVersion: 2
         x: 64
@@ -125,7 +147,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_3
+    - name: jimmy tile set_3
       rect:
         serializedVersion: 2
         x: 96
@@ -135,7 +157,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_4
+    - name: jimmy tile set_4
       rect:
         serializedVersion: 2
         x: 128
@@ -145,7 +167,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_5
+    - name: jimmy tile set_5
       rect:
         serializedVersion: 2
         x: 192
@@ -155,7 +177,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_6
+    - name: jimmy tile set_6
       rect:
         serializedVersion: 2
         x: 224
@@ -165,7 +187,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_7
+    - name: jimmy tile set_7
       rect:
         serializedVersion: 2
         x: 256
@@ -175,7 +197,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_8
+    - name: jimmy tile set_8
       rect:
         serializedVersion: 2
         x: 288
@@ -185,7 +207,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_9
+    - name: jimmy tile set_9
       rect:
         serializedVersion: 2
         x: 0
@@ -195,7 +217,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_10
+    - name: jimmy tile set_10
       rect:
         serializedVersion: 2
         x: 32
@@ -205,7 +227,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_11
+    - name: jimmy tile set_11
       rect:
         serializedVersion: 2
         x: 64
@@ -215,7 +237,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_12
+    - name: jimmy tile set_12
       rect:
         serializedVersion: 2
         x: 160
@@ -225,7 +247,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_13
+    - name: jimmy tile set_13
       rect:
         serializedVersion: 2
         x: 192
@@ -235,7 +257,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_14
+    - name: jimmy tile set_14
       rect:
         serializedVersion: 2
         x: 224
@@ -245,7 +267,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_15
+    - name: jimmy tile set_15
       rect:
         serializedVersion: 2
         x: 256
@@ -255,7 +277,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_16
+    - name: jimmy tile set_16
       rect:
         serializedVersion: 2
         x: 288
@@ -265,7 +287,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_17
+    - name: jimmy tile set_17
       rect:
         serializedVersion: 2
         x: 0
@@ -275,7 +297,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_18
+    - name: jimmy tile set_18
       rect:
         serializedVersion: 2
         x: 32
@@ -285,7 +307,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_19
+    - name: jimmy tile set_19
       rect:
         serializedVersion: 2
         x: 64
@@ -295,7 +317,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_20
+    - name: jimmy tile set_20
       rect:
         serializedVersion: 2
         x: 96
@@ -305,7 +327,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_21
+    - name: jimmy tile set_21
       rect:
         serializedVersion: 2
         x: 128
@@ -315,7 +337,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_22
+    - name: jimmy tile set_22
       rect:
         serializedVersion: 2
         x: 192
@@ -325,7 +347,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_23
+    - name: jimmy tile set_23
       rect:
         serializedVersion: 2
         x: 224
@@ -335,7 +357,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_24
+    - name: jimmy tile set_24
       rect:
         serializedVersion: 2
         x: 256
@@ -345,7 +367,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_25
+    - name: jimmy tile set_25
       rect:
         serializedVersion: 2
         x: 288
@@ -355,7 +377,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_26
+    - name: jimmy tile set_26
       rect:
         serializedVersion: 2
         x: 160
@@ -365,7 +387,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_27
+    - name: jimmy tile set_27
       rect:
         serializedVersion: 2
         x: 192
@@ -375,7 +397,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_28
+    - name: jimmy tile set_28
       rect:
         serializedVersion: 2
         x: 224
@@ -385,7 +407,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_29
+    - name: jimmy tile set_29
       rect:
         serializedVersion: 2
         x: 256
@@ -395,7 +417,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_30
+    - name: jimmy tile set_30
       rect:
         serializedVersion: 2
         x: 288
@@ -405,7 +427,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_31
+    - name: jimmy tile set_31
       rect:
         serializedVersion: 2
         x: 192
@@ -415,7 +437,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_32
+    - name: jimmy tile set_32
       rect:
         serializedVersion: 2
         x: 224
@@ -425,7 +447,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_33
+    - name: jimmy tile set_33
       rect:
         serializedVersion: 2
         x: 256
@@ -435,7 +457,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_34
+    - name: jimmy tile set_34
       rect:
         serializedVersion: 2
         x: 192
@@ -445,7 +467,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_35
+    - name: jimmy tile set_35
       rect:
         serializedVersion: 2
         x: 224
@@ -455,7 +477,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_36
+    - name: jimmy tile set_36
       rect:
         serializedVersion: 2
         x: 256
@@ -465,7 +487,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_37
+    - name: jimmy tile set_37
       rect:
         serializedVersion: 2
         x: 288
@@ -475,7 +497,27 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_38
+    - name: jimmy tile set_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_39
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_40
       rect:
         serializedVersion: 2
         x: 192
@@ -485,7 +527,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_39
+    - name: jimmy tile set_41
       rect:
         serializedVersion: 2
         x: 224
@@ -495,7 +537,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_40
+    - name: jimmy tile set_42
       rect:
         serializedVersion: 2
         x: 256
@@ -505,7 +547,27 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_41
+    - name: jimmy tile set_43
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_44
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_45
       rect:
         serializedVersion: 2
         x: 192
@@ -515,7 +577,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_42
+    - name: jimmy tile set_46
       rect:
         serializedVersion: 2
         x: 224
@@ -525,7 +587,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_43
+    - name: jimmy tile set_47
       rect:
         serializedVersion: 2
         x: 256
@@ -535,11 +597,191 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: tile set_44
+    - name: jimmy tile set_48
       rect:
         serializedVersion: 2
         x: 288
         y: 112
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_49
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 112
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_50
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_51
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_53
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_54
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_55
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_56
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_57
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_58
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_59
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_61
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_62
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_63
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_64
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_65
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jimmy tile set_66
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 16
         width: 32
         height: 32
       alignment: 0
