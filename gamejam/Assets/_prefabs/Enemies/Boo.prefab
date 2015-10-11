@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452112}
+  - 114: {fileID: 11401150}
   - 114: {fileID: 11407068}
   - 212: {fileID: 21278440}
   - 95: {fileID: 9594760}
@@ -40,7 +41,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180592}
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -78,6 +79,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11401150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d2e4d94929ae642aed48196b67ef9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  zoneType: 0
 --- !u!114 &11407068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86,14 +100,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 180592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8ba288a983addd4bab8277649d1d43f, type: 3}
+  m_Script: {fileID: 11500000, guid: 128455eb831f18b44bdd38489ecad4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   direction: {x: 1, y: 0}
-  flying: 0
-  maxLeftMovement: 5
-  maxRightMovement: 5
+  flying: 1
 --- !u!212 &21278440
 SpriteRenderer:
   m_ObjectHideFlags: 1
