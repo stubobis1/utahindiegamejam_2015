@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/_scenes/finished levels/6StashIntro.unity
   - enabled: 1
     path: Assets/_scenes/finished levels/8JingaIntro.unity
+  - enabled: 1
+    path: Assets/_scenes/finished levels/10JingaLEVEL3.unity
