@@ -649,52 +649,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 77bcbd516d2291a41a3411458c250e15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1001 &78136424
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 158.5625
-      objectReference: {fileID: 0}
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8.625
-      objectReference: {fileID: 0}
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11409706, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-      propertyPath: pixelPerfectCamera
-      value: 
-      objectReference: {fileID: 1959197790}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &89339585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1483,52 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 449720, guid: d4dc03adc4f75ba4c87ae3c8d6bf9932, type: 2}
   m_PrefabInternal: {fileID: 1060611307}
+--- !u!1001 &172867969
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 158.546875
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 9.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409040, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: pixelPerfectCamera
+      value: 
+      objectReference: {fileID: 1959197790}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e8545760221402540a8b402eb51daf13, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &175610293 stripped
 Transform:
   m_PrefabParentObject: {fileID: 411694, guid: ed83b48b60f544346adc5d57c2c55026, type: 2}
@@ -11191,9 +11191,9 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 19.1846981
+  field of view: 9.6315937
   orthographic: 1
-  orthographic size: 10.5625
+  orthographic size: 5.265625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -11231,7 +11231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fitType: 0
-  targetPixelHeight: 676
+  targetPixelHeight: 337
   parallaxLayerCount: 10
   cameraZoom: 1
   pixelatedPostProcessing: 1
