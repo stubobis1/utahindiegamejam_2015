@@ -25,6 +25,8 @@ public class PlayerControl : MonoBehaviour
     public int currentLayer;
     float layerSwitchCooldown = 0.0f;
 
+    [HideInInspector]
+    public GameManager GM;
     void Awake()
     {
         // Setting up references.
@@ -32,8 +34,11 @@ public class PlayerControl : MonoBehaviour
         groundCheck = transform.Find("groundCheck");
         groundedScript = groundCheck.GetComponent<grounded>();
         anim = GetComponent<Animator>();
-        GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
-        GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GM.backZone.GetComponent<AudioSource>().mute = true;
+        
+            
+        //GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
         currentLayer = LayerMask.NameToLayer("Front");
     }
 
@@ -48,12 +53,7 @@ public class PlayerControl : MonoBehaviour
             jump = true;
         }
 
-        if (Input.GetButtonDown("Fire2"))
-        {
-            phase();
-        }
-
-        if (layerSwitchCooldown <= 0.0f && Input.GetKeyDown(KeyCode.L))
+        if (layerSwitchCooldown <= 0.0f && Input.GetButtonDown("Fire2"))
         {
             SwitchLayer();
             layerSwitchCooldown = 0.5f;
@@ -63,19 +63,18 @@ public class PlayerControl : MonoBehaviour
             layerSwitchCooldown -= Time.deltaTime;
     }
 
-    bool happyLand = true;
-    void phase()
+    
+    void ChangeMusic(bool frontMusic, AudioSource front, AudioSource back)
     {
-        happyLand = !happyLand;
-        if (happyLand)
+        if (frontMusic)
         {
-            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = false;
-            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = true;
+            front.mute = false;
+            back.mute = true;
         }
         else
         {
-            GameObject.Find("Metal_Audio").GetComponent<AudioSource>().mute = true;
-            GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
+            front.mute = true;
+            back.mute = false;
         }
     }
     void FixedUpdate()
@@ -139,6 +138,9 @@ public class PlayerControl : MonoBehaviour
     void SwitchLayer()
     {
         int nextLayer = currentLayer == LayerMask.NameToLayer("Front") ? LayerMask.NameToLayer("Back") : LayerMask.NameToLayer("Front");
+
+        bool isFront = (nextLayer == LayerMask.NameToLayer("Front"));
+        ChangeMusic(isFront, GM.frontZone.GetComponent<AudioSource>(), GM.backZone.GetComponent<AudioSource>());
 
         Transform groundCheck = gameObject.transform.FindChild("groundCheck");
 
