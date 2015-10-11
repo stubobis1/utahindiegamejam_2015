@@ -4,22 +4,49 @@ using System.Collections;
 public class HomingMovement : EnemyMovement {
     private GameObject target;
 
-    float retargetTimer = 0.0f;
+    public bool peekaboo = false;
+    float peekabooThreshold = 60.0f;
+    bool chasing = false;
+    public float maxHomingDistance = 1000.0f;
     bool targetAcquired = false;
+    float retargetTimer = 0.0f;
     Vector2 cachedVelocity;
 
 	public override void Start () {
         base.Start();
 
         speed = 2.0f;
+
+        if (peekaboo)
+            disabled = true;
 	}
 	
 	public override void Update () {
-        if(!disabled)
+        if (!targetAcquired)
         {
-            if (!targetAcquired)
-                this.target = gameObject.GetComponent<Enemy>().target;
+            target = gameObject.GetComponent<Enemy>().target;
 
+            if (target)
+                targetAcquired = true;
+        }
+            
+
+        if (peekaboo && target)
+        {
+            Vector3 playerDirection = target.GetComponent<PlayerControl>().facingRight ?
+                new Vector3(1, 0, 0) : new Vector3(-1, 0, 0);
+
+            Vector3 toPlayer = target.transform.position - transform.position;
+
+            if (Vector3.Dot(playerDirection, toPlayer.normalized) < 0)
+                disabled = true;
+            else
+                if(toPlayer.magnitude < maxHomingDistance)
+                    disabled = false;
+        }
+
+        if (!disabled)
+        {
             if (target && retargetTimer <= 0.0f)
             {
                 retargetTimer += 1.0f;
@@ -36,16 +63,18 @@ public class HomingMovement : EnemyMovement {
         }
 	}
 
-    public override void Enable(string layer)
+    public override void Enable()
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = cachedVelocity;
         retargetTimer = 0.0f;
-        base.Enable(layer);
+        base.Enable();
     }
 
-    public override void Disable(string layer)
+    public override void Disable()
     {
-        cachedVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        base.Disable(layer);
+        Rigidbody2D body = gameObject.GetComponent<Rigidbody2D>();
+        cachedVelocity = body.velocity;
+        body.velocity = new Vector2();
+        base.Disable();
     }
 }
