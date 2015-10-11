@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public GameObject frontZone;
     public GameObject backZone;
@@ -11,12 +12,23 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public zoneScript frontZoneScript;
 
-    void Start () {
+    void Awake()
+    {
         initalSwapSetup();
+        Object.DontDestroyOnLoad(backZoneScript.music);
+        Object.DontDestroyOnLoad(frontZoneScript.music);
+        
     }
 
     void OnLevelWasLoaded()
     {
+       
+        var objs = GameObject.FindGameObjectsWithTag("SilentAudio");
+
+        for (int i = 0; i < objs.Length; i++)
+        {
+            GameObject.DestroyImmediate(objs[i]);
+        }
         Debug.Log("LOADED");
         initalSwapSetup();
     }
@@ -36,6 +48,7 @@ public class GameManager : MonoBehaviour {
         backZoneScript = backZone.GetComponent<zoneScript>();
         backZoneScript.isFront = false;
         frontZoneScript.isFront = true;
+        backZoneScript.music.gameObject.tag = "PlayingAudio";
 
         foreach (SpriteRenderer sr in frontZoneChildren)
         {
@@ -72,9 +85,10 @@ public class GameManager : MonoBehaviour {
             }
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }

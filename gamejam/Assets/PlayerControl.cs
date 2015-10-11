@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour
 
     [HideInInspector]
     public GameManager GM;
-    void Awake()
+    void Start()
     {
         // Setting up references.
 
@@ -35,9 +35,10 @@ public class PlayerControl : MonoBehaviour
         groundedScript = groundCheck.GetComponent<grounded>();
         anim = GetComponent<Animator>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
-        GM.backZone.GetComponent<AudioSource>().mute = true;
-        
-            
+        GM.backZoneScript.music.mute = true;
+        GM.frontZoneScript.music.mute = false;
+
+
         //GameObject.Find("Normal_Audio").GetComponent<AudioSource>().mute = false;
         currentLayer = LayerMask.NameToLayer("Front");
     }
@@ -160,7 +161,7 @@ public class PlayerControl : MonoBehaviour
         int nextLayer = currentLayer == LayerMask.NameToLayer("Front") ? LayerMask.NameToLayer("Back") : LayerMask.NameToLayer("Front");
 
         bool isFront = (nextLayer == LayerMask.NameToLayer("Front"));
-        ChangeMusic(isFront, GM.frontZone.GetComponent<AudioSource>(), GM.backZone.GetComponent<AudioSource>());
+        ChangeMusic(isFront, GM.frontZoneScript.music, GM.backZoneScript.music);
 
         Transform groundCheck = gameObject.transform.FindChild("groundCheck");
 
