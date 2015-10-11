@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PLayerPhysics : MonoBehaviour {
+public class PlayerPhysics : MonoBehaviour {
     public void Move(Vector2 moveAmount){
         transform.Translate(moveAmount);
         }

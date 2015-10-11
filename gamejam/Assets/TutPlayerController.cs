@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-[RequireComponent(typeof(PLayerPhysics))]
+[RequireComponent(typeof(PlayerPhysics))]
 public class TutPlayerController : MonoBehaviour
 {
 
@@ -12,7 +12,7 @@ public class TutPlayerController : MonoBehaviour
     public float acceleration = 12;
 
 
-    private PLayerPhysics playerPhysics;
+    private PlayerPhysics playerPhysics;
     private float currentSpeed;
     private float targetSpeed;
     private Vector2 amountToMove;

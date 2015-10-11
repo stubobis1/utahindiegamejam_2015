@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour {
 
     void OnLevelWasLoaded()
     {
-        Debug.Log("LOADED");
         initalSwapSetup();
     }
 
@@ -52,8 +51,6 @@ public class GameManager : MonoBehaviour {
                 }
             }
         }
-
-
 
         foreach (SpriteRenderer sr in backZoneChildren)
         {
