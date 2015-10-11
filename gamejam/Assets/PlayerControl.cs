@@ -164,42 +164,45 @@ public class PlayerControl : MonoBehaviour
         foreach (GameObject go in zones)
         {
             SpriteRenderer[] zoneRenderers = go.GetComponentsInChildren<SpriteRenderer>();
-
-            if (go.tag == "Front")
+            Debug.Log(go.name + " is " + go.GetComponent<zoneScript>().isFront);
+            if (go.GetComponent<zoneScript>().isFront)
+            {
+                go.GetComponent<zoneScript>().isFront = false;
                 foreach (SpriteRenderer sr in zoneRenderers)
                 {
-                    Debug.Log("TESTING1");
-                    
+
+
                     if (sr.transform.tag == "Background")
                     {
-                        sr.color = new Color(1f, 1f, 1f, 0f);
+                        sr.color = Color.clear;
+                        sr.sortingLayerName = "BackSort";
                     }
                     else
                     {
+                        sr.sortingLayerName = "BackSort";
                         sr.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
                     }
 
                 }
+            }
             else
+            {
+                go.GetComponent<zoneScript>().isFront = true;
                 foreach (SpriteRenderer sr in zoneRenderers)
                 {
                     Debug.Log("TESTING2");
                     if (sr.transform.tag == "Background")
                     {
-                        sr.color = new Color(1f,1f,1f,1f);
+                        sr.color = Color.white;
+                        sr.sortingLayerName = "BackSort";
                     }
                     else
-                    { 
+                    {
                         sr.color = new Color(1f, 1f, 1f, 1f);
+                        sr.sortingLayerName = "FrontSort";
                     }
                 }
-        }
-
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        foreach(GameObject enemy in enemies)
-        {
-            enemy.GetComponent<Enemy>().Switch(currentLayer);
+            }
         }
     }
 }
