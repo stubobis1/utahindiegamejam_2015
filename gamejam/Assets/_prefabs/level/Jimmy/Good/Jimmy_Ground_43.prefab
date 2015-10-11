@@ -10,9 +10,9 @@ GameObject:
   - 4: {fileID: 411694}
   - 212: {fileID: 21210208}
   - 114: {fileID: 11409706}
-  - 61: {fileID: 6141146}
+  - 60: {fileID: 6052850}
   m_Layer: 0
-  m_Name: Jimmy_Ground_2
+  m_Name: Jimmy_Ground_43
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.59375, y: 2.09375, z: 0}
+  m_LocalPosition: {x: -6.21875, y: -3.46875, z: 0}
   m_LocalScale: {x: 3.125, y: 3.125, z: 3.125}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6141146
-BoxCollider2D:
+--- !u!60 &6052850
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -40,9 +40,16 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -.0403080545}
-  serializedVersion: 2
-  m_Size: {x: .319999993, y: .239383653}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -.0896849036, y: .0649613142}
+      - {x: -.0467727669, y: .0199952684}
+      - {x: -.0893695056, y: -.0291391741}
+      - {x: -.0912025422, y: -.159999996}
+      - {x: .10462036, y: -.159999996}
+      - {x: .104620203, y: .158291161}
+      - {x: -.0877844244, y: .163417742}
 --- !u!114 &11409706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +92,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 77bcbd516d2291a41a3411458c250e15, type: 3}
+  m_Sprite: {fileID: 21300086, guid: 77bcbd516d2291a41a3411458c250e15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -97,7 +104,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300004, guid: 77bcbd516d2291a41a3411458c250e15,
+      objectReference: {fileID: 21300100, guid: 77bcbd516d2291a41a3411458c250e15,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
