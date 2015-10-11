@@ -194,5 +194,12 @@ public class PlayerControl : MonoBehaviour
                     }
                 }
         }
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach(GameObject enemy in enemies)
+        {
+            enemy.GetComponent<Enemy>().Switch(currentLayer);
+        }
     }
 }

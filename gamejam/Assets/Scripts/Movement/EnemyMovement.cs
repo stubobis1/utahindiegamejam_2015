@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour {
     public Vector2 direction = new Vector2(1, 0);
     public bool flying = false;
     protected Animator anim;
+    protected bool disabled = false;
 
     public virtual void Start () {
         anim = GetComponent<Animator>();
@@ -22,5 +23,13 @@ public class EnemyMovement : MonoBehaviour {
 
     public virtual void FixedUpdate() {
         anim.SetFloat("Speed", Mathf.Abs(speed));
+    }
+
+    public virtual void Enable(string layer) {
+        disabled = false;
+    }
+
+    public virtual void Disable(string layer) {
+        disabled = true;
     }
 }

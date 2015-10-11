@@ -10,15 +10,17 @@ public class GameManager : MonoBehaviour {
         if (frontZone == null || backZone == null)
             Debug.LogError("ZONES MISSING IN GAME MANAGER");
 
-		SpriteRenderer[] frontZoneChildren = frontZone.GetComponentsInChildren<SpriteRenderer>();
+<<<<<<< HEAD
+        SpriteRenderer[] frontZoneChildren = frontZone.GetComponentsInChildren<SpriteRenderer>();
         SpriteRenderer[] backZoneChildren = backZone.GetComponentsInChildren<SpriteRenderer>();
-
+=======
         frontZone.tag = "Zone";
         backZone.tag = "Zone";
 
         SpriteRenderer[] zoneChildren = frontZone.GetComponentsInChildren<SpriteRenderer>();
+>>>>>>> f5610fe205dc143bbb814fb013526812ddc5951c
 
-        foreach(SpriteRenderer sr in zoneChildren)
+        foreach (SpriteRenderer sr in frontZoneChildren)
         {
             if(sr.GetInstanceID() != frontZone.GetInstanceID())
             {
