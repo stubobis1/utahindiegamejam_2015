@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-
     [HideInInspector]
     public GameObject target;
 
@@ -10,6 +9,9 @@ public class Enemy : MonoBehaviour {
     public bool backSwitch = false;
 
     void Start () {
+        if (!frontSwitch & !backSwitch)
+            this.gameObject.SetActive(false);
+
         target = GameObject.FindGameObjectWithTag("Player");
 	}
 	
@@ -17,23 +19,26 @@ public class Enemy : MonoBehaviour {
 
     }
 
-    void Switch(string layer)
+    public void Switch(int layer)
     {
-        if (frontSwitch && layer == "Front")
+        if (frontSwitch && layer == LayerMask.NameToLayer("Front"))
         {
-            Debug.Log(gameObject.name + ": " + "FRONT");
-            this.gameObject.layer = LayerMask.NameToLayer("Front");
+            Activate("Front");
         }
-            
-        else if (backSwitch && layer == "Back")
+        else if (backSwitch && layer == LayerMask.NameToLayer("Back"))
         {
-            Debug.Log(gameObject.name + ": " + "BACK");
-            this.gameObject.layer = LayerMask.NameToLayer("Front");
-        }    
+            Activate("Back");
+        }
+
+        this.gameObject.layer = layer;
     }
 
     public virtual void Activate(string layer) {
+        this.gameObject.GetComponent<EnemyMovement>().Enable(layer);
+    }
 
+    public virtual void Deactivate(string layer){
+        this.gameObject.GetComponent<EnemyMovement>().Disable(layer);
     }
 
     public virtual void OnCollisionEnter(Collision collision) {

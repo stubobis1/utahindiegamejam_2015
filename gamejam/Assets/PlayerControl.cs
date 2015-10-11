@@ -166,5 +166,12 @@ public class PlayerControl : MonoBehaviour
                 foreach (SpriteRenderer sr in zoneRenderers)
                     sr.sortingLayerName = "FrontSort";
         }
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach(GameObject enemy in enemies)
+        {
+            enemy.GetComponent<Enemy>().Switch(currentLayer);
+        }
     }
 }
