@@ -117,6 +117,7 @@ public class PlayerControl : MonoBehaviour
 
             // Make sure the player can't jump again until the jump conditions from Update are satisfied.
             jump = false;
+            groundedScript.isGrounded = false;
 
             Debug.Log("Jump force added");
         }
