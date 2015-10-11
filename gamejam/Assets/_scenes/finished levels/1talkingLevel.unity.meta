@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:gamejam/Assets/_scenes/finished levels/1talkingLevel.unity.meta
 guid: 37564801afa624640bf74cedbdfe0b48
 timeCreated: 1444583019
@@ -6,6 +7,10 @@ timeCreated: 1444583019
 guid: 168edaffe7775484c9b4dd7059fda221
 timeCreated: 1444583112
 >>>>>>> 72fc57c30961b7bdec52d819142245c9d28a9733:gamejam/Assets/_scenes/finished levels/1talkingLevel.unity.meta
+=======
+guid: 168edaffe7775484c9b4dd7059fda221
+timeCreated: 1444583112
+>>>>>>> 61e0f3b3da17737d9632c16c5501e149f5a6a6ea
 licenseType: Free
 DefaultImporter:
   userData: 
