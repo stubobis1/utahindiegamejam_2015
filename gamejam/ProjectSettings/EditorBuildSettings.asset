@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/_scenes/levels in final build/talkingLevel.unity
   - enabled: 1
     path: Assets/_scenes/levels in final build/Real Level 2.unity
+  - enabled: 1
+    path: Assets/_scenes/levels in final build/Narcisis.unity
