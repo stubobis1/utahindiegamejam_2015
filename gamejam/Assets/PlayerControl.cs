@@ -12,8 +12,6 @@ public class PlayerControl : MonoBehaviour
     public AudioClip[] jumpClips;           // Array of clips for when the player jumps.
     public float jumpForce = 10f;         // Amount of force added when the player jumps.
 
-
-
     private Transform groundCheck;          // A position marking where to check if the player is grounded.
     private bool isGrounded = false;
     private grounded groundedScript;
@@ -21,6 +19,7 @@ public class PlayerControl : MonoBehaviour
 
     public int currentLayer;
     float layerSwitchCooldown = 0.0f;
+    float attackCooldown = 0.0f;
 
     [HideInInspector]
     public GameManager GM;
@@ -64,6 +63,30 @@ public class PlayerControl : MonoBehaviour
         {
             layerSwitchCooldown -= Time.deltaTime;
         }
+
+        if(attackCooldown <= 0.0f && Input.GetButtonDown("Fire1"))
+        {
+            anim.SetTrigger("Roundhouse");
+
+            Vector3 currentPosition = transform.position;
+
+            Collider2D[] collisions = Physics2D.OverlapAreaAll(new Vector2(currentPosition.x + .05f, currentPosition.y + .2f),
+                new Vector2(currentPosition.x + .8f, currentPosition.y - .3f));
+
+            foreach (Collider2D c in collisions)
+            {
+                if (c.gameObject.tag == "Enemy")
+                {
+                    Debug.Log(c.name);
+                    c.gameObject.BroadcastMessage("Death");
+                }
+            }
+
+            attackCooldown = 0.5f;
+        }
+
+        if (attackCooldown > 0)
+            attackCooldown -= Time.deltaTime;
 
         if (this.transform.position.y < -50)
         {
@@ -140,19 +163,25 @@ public class PlayerControl : MonoBehaviour
     {
         int nextLayer = currentLayer == LayerMask.NameToLayer("Front") ? LayerMask.NameToLayer("Back") : LayerMask.NameToLayer("Front");
 
-        bool isFront = (nextLayer == LayerMask.NameToLayer("Front"));
-        ChangeMusic(isFront, GM.frontZone.GetComponent<AudioSource>(), GM.backZone.GetComponent<AudioSource>());
-
         Transform groundCheck = gameObject.transform.FindChild("groundCheck");
 
         if (groundCheck == null)
             Debug.LogError("GROUNDCHECK MISSING!");
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(groundCheck.transform.position, new Vector3(0, 0, 1), 1, 1 << nextLayer);
+        Vector3 currentPosition = transform.position;
 
-        foreach (RaycastHit2D rh in hits)
-            if (rh.transform.tag != "Enemy")
+        Collider2D[] otherZoneCollisions = Physics2D.OverlapAreaAll(new Vector2(currentPosition.x - .15f, currentPosition.y + .3f),
+            new Vector2(currentPosition.x + .15f, currentPosition.y - .2f),1 << nextLayer);
+
+        foreach (Collider2D c in otherZoneCollisions)
+            if (c.tag != "Enemy")
+            {
+                layerSwitchCooldown = 0.0f;
                 return;
+            }
+
+        bool isFront = (nextLayer == LayerMask.NameToLayer("Front"));
+        ChangeMusic(isFront, GM.frontZone.GetComponent<AudioSource>(), GM.backZone.GetComponent<AudioSource>());
 
         gameObject.layer = currentLayer = nextLayer;
         groundCheck.gameObject.layer = currentLayer;

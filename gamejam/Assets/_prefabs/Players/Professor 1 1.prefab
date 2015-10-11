@@ -116,9 +116,9 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 16.8092918
+  field of view: 18.0129185
   orthographic: 1
-  orthographic size: 9.234375
+  orthographic size: 9.90625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -250,9 +250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fitType: 0
-  targetPixelHeight: 591
+  targetPixelHeight: 317
   parallaxLayerCount: 10
-  cameraZoom: 1
+  cameraZoom: 2
   pixelatedPostProcessing: 1
   heightError: 0
   showGizmos: 0
@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 1
-  jump: 0
   moveForce: 200
   maxSpeed: 10
   jumpClips: []

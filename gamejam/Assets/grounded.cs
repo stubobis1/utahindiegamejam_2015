@@ -6,9 +6,6 @@ public class grounded : MonoBehaviour {
     [HideInInspector]
     public bool isGrounded = false;
 
-    [HideInInspector]
-    public bool isGrounded2 = false;
-
 	void Start () {
 	
 	}
