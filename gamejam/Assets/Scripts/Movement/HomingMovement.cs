@@ -7,7 +7,8 @@ public class HomingMovement : EnemyMovement {
     public bool peekaboo = false;
     float peekabooThreshold = 60.0f;
     bool chasing = false;
-    public float maxHomingDistance = 1000.0f;
+    public float maxHomingDistance = 200.0f;
+    public float maxSightDistance = 200f;
     bool targetAcquired = false;
     float retargetTimer = 0.0f;
     public float retargetDelay = 0.5f;
@@ -36,7 +37,8 @@ public class HomingMovement : EnemyMovement {
 
             Vector3 toPlayer = target.transform.position - transform.position;
 
-            if (Vector3.Dot(playerDirection, toPlayer.normalized) < 0)
+            if (Vector3.Dot(playerDirection, toPlayer.normalized) < 0 &&
+                toPlayer.magnitude <= maxSightDistance)
                 disabled = true;
             else
                 if(toPlayer.magnitude < maxHomingDistance)

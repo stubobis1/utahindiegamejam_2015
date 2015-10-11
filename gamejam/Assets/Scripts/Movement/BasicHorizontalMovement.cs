@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BasicHorizontalMovement : EnemyMovement {
 
-    public float maxLeftMovement = 25.0f;
-    public float maxRightMovement = 25.0f;
+    public float maxLeftMovement = 20.0f;
+    public float maxRightMovement = 20.0f;
     float leftBoundary, rightBoundary, directionSwitchCooldown;
     bool directionSwitchReady = true;
     
