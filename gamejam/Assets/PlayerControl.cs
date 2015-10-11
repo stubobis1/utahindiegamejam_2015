@@ -149,29 +149,60 @@ public class PlayerControl : MonoBehaviour
 
         foreach (RaycastHit2D rh in hits)
             if (rh.transform.tag != "Enemy")
-                return;
+            {
+                Debug.Log("not switching because of: " + rh.transform.name);
+                //return;
+
+            }
+
 
         gameObject.layer = currentLayer = nextLayer;
+        groundCheck.gameObject.layer = currentLayer;
 
         GameObject[] zones = GameObject.FindGameObjectsWithTag("Zone");
 
         foreach (GameObject go in zones)
         {
             SpriteRenderer[] zoneRenderers = go.GetComponentsInChildren<SpriteRenderer>();
-
-            if (zoneRenderers[0].sortingLayerName == "FrontSort")
+            Debug.Log(go.name + " is " + go.GetComponent<zoneScript>().isFront);
+            if (go.GetComponent<zoneScript>().isFront)
+            {
+                go.GetComponent<zoneScript>().isFront = false;
                 foreach (SpriteRenderer sr in zoneRenderers)
-                    sr.sortingLayerName = "BackSort";
+                {
+
+
+                    if (sr.transform.tag == "Background")
+                    {
+                        sr.color = Color.clear;
+                        sr.sortingLayerName = "BackSort";
+                    }
+                    else
+                    {
+                        sr.sortingLayerName = "BackSort";
+                        sr.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+                    }
+
+                }
+            }
             else
+            {
+                go.GetComponent<zoneScript>().isFront = true;
                 foreach (SpriteRenderer sr in zoneRenderers)
-                    sr.sortingLayerName = "FrontSort";
-        }
-
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        foreach(GameObject enemy in enemies)
-        {
-            enemy.GetComponent<Enemy>().Switch(currentLayer);
+                {
+                    Debug.Log("TESTING2");
+                    if (sr.transform.tag == "Background")
+                    {
+                        sr.color = Color.white;
+                        sr.sortingLayerName = "BackSort";
+                    }
+                    else
+                    {
+                        sr.color = new Color(1f, 1f, 1f, 1f);
+                        sr.sortingLayerName = "FrontSort";
+                    }
+                }
+            }
         }
     }
 }

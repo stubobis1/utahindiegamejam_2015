@@ -6,38 +6,26 @@ public class GameManager : MonoBehaviour {
     public GameObject frontZone;
     public GameObject backZone;
 
-    [HideInInspector]
-    public zoneScript backZoneScript;
-    [HideInInspector]
-    public zoneScript frontZoneScript;
-
-    void Awake () {
+	void Awake () {
         if (frontZone == null || backZone == null)
             Debug.LogError("ZONES MISSING IN GAME MANAGER");
 
+<<<<<<< HEAD
         SpriteRenderer[] frontZoneChildren = frontZone.GetComponentsInChildren<SpriteRenderer>();
         SpriteRenderer[] backZoneChildren = backZone.GetComponentsInChildren<SpriteRenderer>();
-
-        backZone.tag = "Zone";
+=======
         frontZone.tag = "Zone";
-        frontZoneScript = frontZone.GetComponent<zoneScript>();
-        backZoneScript = backZone.GetComponent<zoneScript>();
-        backZoneScript.isFront = false;
-        frontZoneScript.isFront = true;
+        backZone.tag = "Zone";
+
+        SpriteRenderer[] zoneChildren = frontZone.GetComponentsInChildren<SpriteRenderer>();
+>>>>>>> f5610fe205dc143bbb814fb013526812ddc5951c
 
         foreach (SpriteRenderer sr in frontZoneChildren)
         {
             if(sr.GetInstanceID() != frontZone.GetInstanceID())
             {
                 sr.gameObject.layer = LayerMask.NameToLayer("Front");
-                if (sr.transform.tag == "Background")
-                {
-                    sr.sortingLayerName = "BackSort";
-                }
-                else
-                {
-                    sr.sortingLayerName = "FrontSort";
-                }
+                sr.sortingLayerName = "FrontSort";
             }
         }
 
@@ -47,16 +35,9 @@ public class GameManager : MonoBehaviour {
         {
             if (sr.GetInstanceID() != frontZone.GetInstanceID())
             {
-                if (sr.transform.tag == "Background")
-                {
-                    sr.color = Color.clear;
-                }
-                else
-                {
-                    sr.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                }
                 sr.gameObject.layer = LayerMask.NameToLayer("Back");
                 sr.sortingLayerName = "BackSort";
+                sr.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
             }
         }
     }

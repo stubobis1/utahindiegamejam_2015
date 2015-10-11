@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Ground
   - Zone
+  - Player
   - Enemy
+  - Background
   layers:
   - Default
   - TransparentFX

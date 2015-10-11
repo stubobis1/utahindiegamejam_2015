@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: b735a694d0a3cc54683fe0d1e22f7f9b
-timeCreated: 1444524202
+guid: c295ed769e1c8a5458a84998d94f8d39
+timeCreated: 1444524231
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: professor_run_strip10_0
-    21300002: professor_run_strip10_1
-    21300004: professor_run_strip10_2
-    21300006: professor_run_strip10_3
-    21300008: professor_run_strip10_4
-    21300010: professor_run_strip10_5
-    21300012: professor_run_strip10_6
-    21300014: professor_run_strip10_7
-    21300016: professor_run_strip10_8
-    21300018: professor_run_strip10_9
+    21300000: player_jump_strip8_0
+    21300002: player_jump_strip8_1
+    21300004: player_jump_strip8_2
+    21300006: player_jump_strip8_3
+    21300008: player_jump_strip8_4
+    21300010: player_jump_strip8_5
+    21300012: player_jump_strip8_6
+    21300014: player_jump_strip8_7
+    21300016: player_jump_strip8_8
+    21300018: player_jump_strip8_9
+    21300020: player_jump_strip8_10
+    21300022: player_jump_strip8_11
+    21300024: player_jump_strip8_12
+    21300026: player_jump_strip8_13
+    21300028: player_jump_strip8_14
+    21300030: player_jump_strip8_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,7 +66,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: professor_run_strip10_0
+    - name: player_jump_strip8_0
       rect:
         serializedVersion: 2
         x: 0
@@ -70,7 +76,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_1
+    - name: player_jump_strip8_1
       rect:
         serializedVersion: 2
         x: 55
@@ -80,7 +86,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_2
+    - name: player_jump_strip8_2
       rect:
         serializedVersion: 2
         x: 110
@@ -90,7 +96,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_3
+    - name: player_jump_strip8_3
       rect:
         serializedVersion: 2
         x: 165
@@ -100,7 +106,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_4
+    - name: player_jump_strip8_4
       rect:
         serializedVersion: 2
         x: 220
@@ -110,7 +116,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_5
+    - name: player_jump_strip8_5
       rect:
         serializedVersion: 2
         x: 275
@@ -120,7 +126,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_6
+    - name: player_jump_strip8_6
       rect:
         serializedVersion: 2
         x: 330
@@ -130,7 +136,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_7
+    - name: player_jump_strip8_7
       rect:
         serializedVersion: 2
         x: 385
@@ -140,7 +146,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_8
+    - name: player_jump_strip8_8
       rect:
         serializedVersion: 2
         x: 440
@@ -150,10 +156,70 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: professor_run_strip10_9
+    - name: player_jump_strip8_9
       rect:
         serializedVersion: 2
         x: 495
+        y: 0
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_jump_strip8_10
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 0
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_jump_strip8_11
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 0
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_jump_strip8_12
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 0
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_jump_strip8_13
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 0
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_jump_strip8_14
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_jump_strip8_15
+      rect:
+        serializedVersion: 2
+        x: 825
         y: 0
         width: 55
         height: 70
