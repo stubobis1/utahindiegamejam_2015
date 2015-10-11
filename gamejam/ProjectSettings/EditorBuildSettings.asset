@@ -6,8 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_scenes/levels in final build/talkingLevel.unity
+    path: Assets/_scenes/finished levels/1talkingLevel.unity
   - enabled: 1
-    path: Assets/_scenes/levels in final build/Real Level 2.unity
+    path: Assets/_scenes/finished levels/3jimmyIntro.unity
   - enabled: 1
-    path: Assets/_scenes/levels in final build/Narcisis.unity
+    path: Assets/_scenes/finished levels/4jimmyInterview.unity
+  - enabled: 1
+    path: Assets/_scenes/finished levels/6StashIntro.unity
+  - enabled: 1
+    path: Assets/_scenes/finished levels/8JingaIntro.unity
