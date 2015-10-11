@@ -762,7 +762,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 15474b639a3f11043bb80e0148d2c2fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34f162aba60d3624ea5c25e74cf71ac0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &139599742
 Transform:
@@ -771,7 +771,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139599739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0149998665, y: -.00705885887, z: 0}
+  m_LocalPosition: {x: .0149998665, y: -27.5070591, z: 0}
   m_LocalScale: {x: 3.125, y: 3.125, z: 3.125}
   m_Children: []
   m_Father: {fileID: 2045996977}
@@ -5904,19 +5904,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2045996977}
     m_Modifications:
     - target: {fileID: 497942, guid: da2a6ec8cfd36d94ab7b2fd50c8ee6f9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -75.296875
+      value: -81.1568756
       objectReference: {fileID: 0}
     - target: {fileID: 497942, guid: da2a6ec8cfd36d94ab7b2fd50c8ee6f9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.375
+      value: 6.5241909
       objectReference: {fileID: 0}
     - target: {fileID: 497942, guid: da2a6ec8cfd36d94ab7b2fd50c8ee6f9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.97851562
       objectReference: {fileID: 0}
     - target: {fileID: 497942, guid: da2a6ec8cfd36d94ab7b2fd50c8ee6f9, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5936,7 +5936,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 497942, guid: da2a6ec8cfd36d94ab7b2fd50c8ee6f9, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 11409040, guid: da2a6ec8cfd36d94ab7b2fd50c8ee6f9, type: 2}
       propertyPath: pixelPerfectCamera
@@ -6728,7 +6728,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1001 &1374802643
 Prefab:
   m_ObjectHideFlags: 0
@@ -6783,6 +6783,10 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 411694, guid: c339ead434218a64e8fc88b58fad74e9, type: 2}
   m_PrefabInternal: {fileID: 1374802643}
+--- !u!4 &1378325076 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 497942, guid: da2a6ec8cfd36d94ab7b2fd50c8ee6f9, type: 2}
+  m_PrefabInternal: {fileID: 1117118337}
 --- !u!1001 &1379178686
 Prefab:
   m_ObjectHideFlags: 0
@@ -6939,7 +6943,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1001 &1389680045
 Prefab:
   m_ObjectHideFlags: 0
@@ -8069,7 +8073,7 @@ Transform:
   - {fileID: 348716642}
   - {fileID: 542525473}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &1593628995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8091,7 +8095,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bc306013a6625da4a99678d950761ba7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ac47d0846295c824ea905d54e7a02a69, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8305,11 +8309,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 470516, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.953125
+      value: 6.484375
       objectReference: {fileID: 0}
     - target: {fileID: 470516, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.625
+      value: 1.3125
       objectReference: {fileID: 0}
     - target: {fileID: 470516, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8341,19 +8345,27 @@ Prefab:
       objectReference: {fileID: 1959197790}
     - target: {fileID: 2013016, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: field of view
-      value: 9.6315937
+      value: 16.8092918
       objectReference: {fileID: 0}
     - target: {fileID: 2013016, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: orthographic size
-      value: 5.265625
+      value: 9.234375
       objectReference: {fileID: 0}
     - target: {fileID: 2042196, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: field of view
-      value: 9.6315937
+      value: 16.8092918
       objectReference: {fileID: 0}
     - target: {fileID: 2042196, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
       propertyPath: orthographic size
-      value: 5.265625
+      value: 9.234375
+      objectReference: {fileID: 0}
+    - target: {fileID: 486014, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 475234, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
@@ -10076,9 +10088,9 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 9.6315937
+  field of view: 16.8092918
   orthographic: 1
-  orthographic size: 5.265625
+  orthographic size: 9.234375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10116,7 +10128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fitType: 0
-  targetPixelHeight: 337
+  targetPixelHeight: 591
   parallaxLayerCount: 10
   cameraZoom: 1
   pixelatedPostProcessing: 1
@@ -10708,8 +10720,9 @@ Transform:
   - {fileID: 998930365}
   - {fileID: 2099451688}
   - {fileID: 1656909131}
+  - {fileID: 1378325076}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &2045996978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10731,7 +10744,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7eddb574c29a23e4a975953accf015a5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 06ab5016b13a947428e49bdce835d7e0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
