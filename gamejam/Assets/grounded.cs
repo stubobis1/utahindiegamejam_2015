@@ -21,11 +21,5 @@ public class grounded : MonoBehaviour {
             isGrounded = true;
         }
     }
-    void OnTriggerExit2D(Collider2D coll)
-    {
-        if (coll.gameObject.tag == "Ground")
-        {
-            isGrounded = false;
-        }
-    }
+    
 }
