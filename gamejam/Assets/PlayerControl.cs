@@ -149,9 +149,15 @@ public class PlayerControl : MonoBehaviour
 
         foreach (RaycastHit2D rh in hits)
             if (rh.transform.tag != "Enemy")
-                return;
+            {
+                Debug.Log("not switching because of: " + rh.transform.name);
+                //return;
+
+            }
+
 
         gameObject.layer = currentLayer = nextLayer;
+        groundCheck.gameObject.layer = currentLayer;
 
         GameObject[] zones = GameObject.FindGameObjectsWithTag("Zone");
 
@@ -159,12 +165,34 @@ public class PlayerControl : MonoBehaviour
         {
             SpriteRenderer[] zoneRenderers = go.GetComponentsInChildren<SpriteRenderer>();
 
-            if (zoneRenderers[0].sortingLayerName == "FrontSort")
+            if (go.tag == "Front")
                 foreach (SpriteRenderer sr in zoneRenderers)
-                    sr.sortingLayerName = "BackSort";
+                {
+                    Debug.Log("TESTING1");
+                    
+                    if (sr.transform.tag == "Background")
+                    {
+                        sr.color = new Color(1f, 1f, 1f, 0f);
+                    }
+                    else
+                    {
+                        sr.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+                    }
+
+                }
             else
                 foreach (SpriteRenderer sr in zoneRenderers)
-                    sr.sortingLayerName = "FrontSort";
+                {
+                    Debug.Log("TESTING2");
+                    if (sr.transform.tag == "Background")
+                    {
+                        sr.color = new Color(1f,1f,1f,1f);
+                    }
+                    else
+                    { 
+                        sr.color = new Color(1f, 1f, 1f, 1f);
+                    }
+                }
         }
     }
 }
