@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/_scenes/finished levels/1talkingLevel.unity
   - enabled: 1
     path: Assets/_scenes/finished levels/3jimmyIntro.unity
@@ -16,8 +16,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/finished levels/6StashIntro.unity
   - enabled: 1
-    path: Assets/_scenes/finished levels/7StashLEVEL2.unity
+    path: Assets/_scenes/finished levels/8StashLEVEL2.unity
   - enabled: 1
-    path: Assets/_scenes/finished levels/9JingaInterview.unity
+    path: Assets/_scenes/finished levels/20Outro.unity
   - enabled: 1
-    path: Assets/_scenes/finished levels/10JingaLEVEL3.unity
+    path: Assets/_scenes/finished levels/15JingaLEVEL3.unity
