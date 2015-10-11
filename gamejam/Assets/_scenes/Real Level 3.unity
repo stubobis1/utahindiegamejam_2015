@@ -9569,10 +9569,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11489574, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
-      propertyPath: pixelPerfectCamera
-      value: 
-      objectReference: {fileID: 1959197790}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
   m_IsPrefabParent: 0
@@ -9964,10 +9960,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
   m_PrefabInternal: {fileID: 136144383}
---- !u!4 &1700407540 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 470516, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
-  m_PrefabInternal: {fileID: 1621624974}
 --- !u!4 &1708664476 stripped
 Transform:
   m_PrefabParentObject: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
@@ -11132,113 +11124,16 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
   m_PrefabInternal: {fileID: 1742621248}
---- !u!1 &1959197784
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1959197789}
-  - 20: {fileID: 1959197788}
-  - 92: {fileID: 1959197787}
-  - 124: {fileID: 1959197786}
-  - 81: {fileID: 1959197785}
-  - 114: {fileID: 1959197790}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1959197785
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959197784}
-  m_Enabled: 1
---- !u!124 &1959197786
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959197784}
-  m_Enabled: 1
---- !u!92 &1959197787
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959197784}
-  m_Enabled: 1
---- !u!20 &1959197788
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959197784}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: .300000012
-  far clip plane: 1000
-  field of view: 19.1846981
-  orthographic: 1
-  orthographic size: 10.5625
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
---- !u!4 &1959197789
+--- !u!4 &1959197789 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959197784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
-  m_LocalScale: {x: .319999993, y: .319999993, z: .319999993}
-  m_Children: []
-  m_Father: {fileID: 1700407540}
-  m_RootOrder: 1
---- !u!114 &1959197790
+  m_PrefabParentObject: {fileID: 486014, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+  m_PrefabInternal: {fileID: 1621624974}
+--- !u!114 &1959197790 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959197784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11402426, guid: 599898e37d82f4e4a911a1ca67caff57,
+    type: 2}
+  m_PrefabInternal: {fileID: 1621624974}
   m_Script: {fileID: 11500000, guid: 5e9c55f9e2e4bf845a8f21eda023f561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fitType: 0
-  targetPixelHeight: 676
-  parallaxLayerCount: 10
-  cameraZoom: 1
-  pixelatedPostProcessing: 1
-  heightError: 0
-  showGizmos: 0
-  subpixelOffset: {x: 0, y: 0}
-  pixelZoomMode: 0
 --- !u!4 &1976391015 stripped
 Transform:
   m_PrefabParentObject: {fileID: 411694, guid: 40a57b67ca491924faa6742b713015a8, type: 2}
