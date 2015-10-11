@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour {
     public float speed = 1.0f;
     public Vector2 direction = new Vector2(1, 0);
     public bool flying = false;
+    public bool ghost = false;
     protected Animator anim;
     protected bool disabled = false;
 
@@ -14,6 +15,9 @@ public class EnemyMovement : MonoBehaviour {
 
         if(flying)
             GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+
+        if (ghost)
+            this.gameObject.layer = LayerMask.NameToLayer("Ghost");
 	}
 	
 	// Update is called once per frame
@@ -22,14 +26,22 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     public virtual void FixedUpdate() {
-        anim.SetFloat("Speed", Mathf.Abs(speed));
+        if (!disabled)
+            anim.SetFloat("Speed", Mathf.Abs(speed));
+        else
+            anim.SetFloat("Speed", 0);
     }
 
-    public virtual void Enable(string layer) {
+    public virtual void Enable()
+    {
         disabled = false;
     }
 
-    public virtual void Disable(string layer) {
+    public virtual void Enable(int layer) {
+        
+    }
+
+    public virtual void Disable() {
         disabled = true;
     }
 }
