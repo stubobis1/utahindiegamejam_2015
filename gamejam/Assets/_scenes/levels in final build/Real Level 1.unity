@@ -5085,6 +5085,52 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300118, guid: 77bcbd516d2291a41a3411458c250e15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &664676599
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.671875
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -10.15625
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 497942, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11409040, guid: e8545760221402540a8b402eb51daf13, type: 2}
+      propertyPath: pixelPerfectCamera
+      value: 
+      objectReference: {fileID: 1219611819}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e8545760221402540a8b402eb51daf13, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &676985603
 GameObject:
   m_ObjectHideFlags: 0
@@ -8918,6 +8964,12 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300118, guid: 77bcbd516d2291a41a3411458c250e15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1219611819 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11468210, guid: 599898e37d82f4e4a911a1ca67caff57,
+    type: 2}
+  m_PrefabInternal: {fileID: 1621624974}
+  m_Script: {fileID: 11500000, guid: 5e9c55f9e2e4bf845a8f21eda023f561, type: 3}
 --- !u!1 &1241909054
 GameObject:
   m_ObjectHideFlags: 0
@@ -10124,7 +10176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1402004086
 GameObject:
   m_ObjectHideFlags: 0
@@ -11729,7 +11781,7 @@ Transform:
   - {fileID: 1421604183}
   - {fileID: 821671162}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1593628995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12062,6 +12114,22 @@ Prefab:
       propertyPath: pixelPerfectCamera
       value: 
       objectReference: {fileID: 1959197790}
+    - target: {fileID: 2013016, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: field of view
+      value: 9.6315937
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013016, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: orthographic size
+      value: 5.265625
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042196, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: field of view
+      value: 9.6315937
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042196, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
+      propertyPath: orthographic size
+      value: 5.265625
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 599898e37d82f4e4a911a1ca67caff57, type: 2}
   m_IsPrefabParent: 0
@@ -15446,7 +15514,7 @@ Transform:
   - {fileID: 474323081}
   - {fileID: 902063306}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &2045996978
 MonoBehaviour:
   m_ObjectHideFlags: 0
