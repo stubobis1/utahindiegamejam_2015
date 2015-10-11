@@ -11,7 +11,19 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public zoneScript frontZoneScript;
 
-    void Awake () {
+    void Start () {
+        initalSwapSetup();
+    }
+
+    void OnLevelWasLoaded()
+    {
+        Debug.Log("LOADED");
+        initalSwapSetup();
+    }
+
+
+    public void initalSwapSetup()
+    {
         if (frontZone == null || backZone == null)
             Debug.LogError("ZONES MISSING IN GAME MANAGER");
 
@@ -27,7 +39,7 @@ public class GameManager : MonoBehaviour {
 
         foreach (SpriteRenderer sr in frontZoneChildren)
         {
-            if(sr.GetInstanceID() != frontZone.GetInstanceID())
+            if (sr.GetInstanceID() != frontZone.GetInstanceID())
             {
                 sr.gameObject.layer = LayerMask.NameToLayer("Front");
                 if (sr.transform.tag == "Background")
@@ -41,9 +53,9 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        
 
-        foreach(SpriteRenderer sr in backZoneChildren)
+
+        foreach (SpriteRenderer sr in backZoneChildren)
         {
             if (sr.GetInstanceID() != frontZone.GetInstanceID())
             {
@@ -56,7 +68,7 @@ public class GameManager : MonoBehaviour {
                     sr.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
                 }
                 sr.gameObject.layer = LayerMask.NameToLayer("Back");
-                sr.sortingLayerName = "BackSort";
+                sr.sortingLayerName = "FrontSort";
             }
         }
     }

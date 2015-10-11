@@ -60,23 +60,21 @@ public class PlayerControl : MonoBehaviour
         }
 
         if (layerSwitchCooldown > 0)
+        {
             layerSwitchCooldown -= Time.deltaTime;
+        }
+
+        if (this.transform.position.y < -50)
+        {
+
+            Death();
+        }
+
+
     }
 
     
-    void ChangeMusic(bool frontMusic, AudioSource front, AudioSource back)
-    {
-        if (frontMusic)
-        {
-            front.mute = false;
-            back.mute = true;
-        }
-        else
-        {
-            front.mute = true;
-            back.mute = false;
-        }
-    }
+ 
     void FixedUpdate()
     {
         // Cache the horizontal input.
@@ -124,6 +122,11 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    void Death()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
     void Flip()
     {
         // Switch the way the player is labelled as facing.
@@ -134,6 +137,22 @@ public class PlayerControl : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+
+    void ChangeMusic(bool frontMusic, AudioSource front, AudioSource back)
+    {
+        if (frontMusic)
+        {
+            front.mute = false;
+            back.mute = true;
+        }
+        else
+        {
+            front.mute = true;
+            back.mute = false;
+        }
+    }
+
 
     void SwitchLayer()
     {
@@ -181,7 +200,6 @@ public class PlayerControl : MonoBehaviour
                     }
                     else
                     {
-                        sr.sortingLayerName = "BackSort";
                         sr.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
                     }
 
