@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour {
     [HideInInspector]
     public GameObject target;
     public bool facingRight = false;
+    public bool ghost = false;
 
     public enum ZoneType {
         None,
@@ -18,11 +19,12 @@ public class Enemy : MonoBehaviour {
     void Start () {
         if (zoneType == ZoneType.None)
             this.gameObject.SetActive(false);
-        else if (zoneType == ZoneType.Back)
-            Deactivate();
 
         target = GameObject.FindGameObjectWithTag("Player");
-	}
+
+        if (ghost)
+            this.gameObject.layer = LayerMask.NameToLayer("Ghost");
+    }
 	
 	public virtual void Update () {
 
@@ -84,7 +86,8 @@ public class Enemy : MonoBehaviour {
         this.gameObject.GetComponent<EnemyMovement>().Disable();
     }
 
-    public virtual void OnCollisionEnter(Collision collision) {
-
+    public virtual void OnCollisionEnter2D(Collision2D collision) {            
+        if (collision.gameObject.tag == "Player")
+            collision.gameObject.BroadcastMessage("Death");
     }
 }

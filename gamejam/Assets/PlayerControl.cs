@@ -6,9 +6,6 @@ public class PlayerControl : MonoBehaviour
 {
     [HideInInspector]
     public bool facingRight = true;         // For determining which way the player is currently facing.
-    [HideInInspector]
-    public bool jump = false;               // Condition for whether the player should jump.
-
 
     public float moveForce = 365f;          // Amount of force added to move the player left and right.
     public float maxSpeed = 5f;             // The fastest the player can travel in the x axis.
@@ -44,13 +41,17 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        // The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-        isGrounded = groundedScript.isGrounded;
-
-        // If the jump button is pressed and the player is grounded then the player should jump.
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        // The player is grounded if a raycast from the groundCheck position hits anything on the ground layer.
+        if (Input.GetButtonDown("Jump") && groundedScript.isGrounded)
         {
-            jump = true;
+            // Play a random jump audio clip.
+            //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+
+            // Add a vertical force to the player.
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+
+            // Make sure the player can't jump again until the jump conditions from Update are satisfied.
+            groundedScript.isGrounded = false;
         }
 
         if (layerSwitchCooldown <= 0.0f && Input.GetButtonDown("Fire2"))
@@ -66,32 +67,33 @@ public class PlayerControl : MonoBehaviour
 
         if (this.transform.position.y < -50)
         {
-
             Death();
         }
-
-
     }
-
-    
  
     void FixedUpdate()
     {
+        Rigidbody2D body = GetComponent<Rigidbody2D>();
+
         // Cache the horizontal input.
         float h = Input.GetAxis("Horizontal");
 
         // The Speed animator parameter is set to the absolute value of the horizontal input.
         anim.SetFloat("Speed", Mathf.Abs(h));
 
+        anim.SetFloat("vSpeed", body.velocity.y);
+
+        anim.SetBool("Grounded", groundedScript.isGrounded);
+
         // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
         if (h * GetComponent<Rigidbody2D>().velocity.x < maxSpeed)
             // ... add a force to the player.
-            GetComponent<Rigidbody2D>().AddForce(Vector2.right * h * moveForce);
-
+            body.AddForce(Vector2.right * h * moveForce);
+        
         // If the player's horizontal velocity is greater than the maxSpeed...
-        if (Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x) > maxSpeed)
+        if (Mathf.Abs(body.velocity.x) > maxSpeed)
             // ... set the player's velocity to the maxSpeed in the x axis.
-            GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
+            body.velocity = new Vector2(Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x) * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         // If the input is moving the player right and the player is facing left...
         if (h > 0 && !facingRight)
@@ -101,26 +103,6 @@ public class PlayerControl : MonoBehaviour
         else if (h < 0 && facingRight)
             // ... flip the player.
             Flip();
-
-        // If the player should jump...
-        if (jump)
-        {
-            // Set the Jump animator trigger parameter.
-            //anim.SetTrigger("Jump");
-
-            // Play a random jump audio clip.
-            //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
-
-            // Add a vertical force to the player.
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
-
-
-            // Make sure the player can't jump again until the jump conditions from Update are satisfied.
-            jump = false;
-            groundedScript.isGrounded = false;
-
-            Debug.Log("Jump force added");
-        }
     }
 
     void Death()
@@ -138,7 +120,6 @@ public class PlayerControl : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
 
     void ChangeMusic(bool frontMusic, AudioSource front, AudioSource back)
     {
@@ -171,12 +152,7 @@ public class PlayerControl : MonoBehaviour
 
         foreach (RaycastHit2D rh in hits)
             if (rh.transform.tag != "Enemy")
-            {
-                Debug.Log("not switching because of: " + rh.transform.name);
-                //return;
-
-            }
-
+                return;
 
         gameObject.layer = currentLayer = nextLayer;
         groundCheck.gameObject.layer = currentLayer;
@@ -186,13 +162,12 @@ public class PlayerControl : MonoBehaviour
         foreach (GameObject go in zones)
         {
             SpriteRenderer[] zoneRenderers = go.GetComponentsInChildren<SpriteRenderer>();
-            Debug.Log(go.name + " is " + go.GetComponent<zoneScript>().isFront);
+
             if (go.GetComponent<zoneScript>().isFront)
             {
                 go.GetComponent<zoneScript>().isFront = false;
                 foreach (SpriteRenderer sr in zoneRenderers)
                 {
-
 
                     if (sr.transform.tag == "Background")
                     {
@@ -209,9 +184,9 @@ public class PlayerControl : MonoBehaviour
             else
             {
                 go.GetComponent<zoneScript>().isFront = true;
+
                 foreach (SpriteRenderer sr in zoneRenderers)
                 {
-                    Debug.Log("TESTING2");
                     if (sr.transform.tag == "Background")
                     {
                         sr.color = Color.white;
