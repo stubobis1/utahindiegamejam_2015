@@ -10,12 +10,11 @@ public class HomingMovement : EnemyMovement {
     public float maxHomingDistance = 1000.0f;
     bool targetAcquired = false;
     float retargetTimer = 0.0f;
+    public float retargetDelay = 0.5f;
     Vector2 cachedVelocity;
 
 	public override void Start () {
         base.Start();
-
-        speed = 2.0f;
 
         if (peekaboo)
             disabled = true;
@@ -29,7 +28,6 @@ public class HomingMovement : EnemyMovement {
             if (target)
                 targetAcquired = true;
         }
-            
 
         if (peekaboo && target)
         {
@@ -49,7 +47,7 @@ public class HomingMovement : EnemyMovement {
         {
             if (target && retargetTimer <= 0.0f)
             {
-                retargetTimer += 1.0f;
+                retargetTimer = retargetDelay;
                 Vector3 targetVector = (target.transform.position - gameObject.transform.position).normalized;
                 direction = new Vector2(targetVector.x, targetVector.y);
             }
@@ -62,6 +60,23 @@ public class HomingMovement : EnemyMovement {
             GetComponent<Rigidbody2D>().AddForce(direction * speed);
         }
 	}
+
+    public override void FixedUpdate()
+    {
+        if(target && !disabled)
+        {
+            float boundsLength = Mathf.Max(GetComponent<Collider2D>().bounds.extents.x,
+                GetComponent<Collider2D>().bounds.extents.y);
+            float targetBoundsLength = Mathf.Max(target.GetComponent<Collider2D>().bounds.extents.x,
+                target.GetComponent<Collider2D>().bounds.extents.y);
+
+            if ((transform.position - target.transform.position).magnitude <=
+                boundsLength + targetBoundsLength)
+                target.BroadcastMessage("Death");
+        }
+
+        base.FixedUpdate();
+    }
 
     public override void Enable()
     {
