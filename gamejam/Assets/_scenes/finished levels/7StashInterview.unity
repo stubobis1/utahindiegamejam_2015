@@ -144,9 +144,9 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 79.1517258
+  field of view: 89.4603271
   orthographic: 0
-  orthographic size: 8.265625
+  orthographic size: 9.90625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fitType: 0
-  targetPixelHeight: 529
+  targetPixelHeight: 634
   parallaxLayerCount: 10
   cameraZoom: 1
   pixelatedPostProcessing: 0
@@ -317,7 +317,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f1950d6b92c734042be6813220217cd2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
