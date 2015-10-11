@@ -51,6 +51,7 @@ public class TalkingController : MonoBehaviour
                 CharTalk(0);
 
                 //GO TO NEXT LEVEL
+                Application.LoadLevel(Application.loadedLevel +1);
             }
         }
     }
