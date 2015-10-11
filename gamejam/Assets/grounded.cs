@@ -11,8 +11,11 @@ public class grounded : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(gameObject.transform.position, new Vector2(0, -1),
-            gameObject.GetComponent<Collider2D>().bounds.extents.y + 0.8f, 1 << gameObject.layer);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(gameObject.transform.position, 0.1f, new Vector2(0, -1),
+            gameObject.GetComponent<Collider2D>().bounds.extents.y + 0.5f, 1 << gameObject.layer);
+
+        //RaycastHit2D[] hits = Physics2D.RaycastAll(gameObject.transform.position, new Vector2(0, -1),
+        //    gameObject.GetComponent<Collider2D>().bounds.extents.y + 0.8f, 1 << gameObject.layer);
 
         if (hits.Length <= 0)
             isGrounded = false;

@@ -30,7 +30,7 @@ public class HomingMovement : EnemyMovement {
                 targetAcquired = true;
         }
 
-        if (peekaboo && target)
+        if (peekaboo && target != null)
         {
             Vector3 playerDirection = target.GetComponent<PlayerControl>().facingRight ?
                 new Vector3(1, 0, 0) : new Vector3(-1, 0, 0);
@@ -39,10 +39,18 @@ public class HomingMovement : EnemyMovement {
 
             if (Vector3.Dot(playerDirection, toPlayer.normalized) < 0 &&
                 toPlayer.magnitude <= maxSightDistance)
+            {
                 disabled = true;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            }  
             else
                 if(toPlayer.magnitude < maxHomingDistance)
                     disabled = false;
+
+            if (disabled)
+                GetComponent<SpriteRenderer>().color = new Color(.3f, .3f, .3f, .3f);
+            else
+                GetComponent<SpriteRenderer>().color = Color.white;
         }
 
         if (!disabled)

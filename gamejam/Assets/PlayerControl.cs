@@ -70,16 +70,19 @@ public class PlayerControl : MonoBehaviour
 
             Vector3 currentPosition = transform.position;
 
-            Collider2D[] collisions = Physics2D.OverlapAreaAll(new Vector2(currentPosition.x + .05f, currentPosition.y + .2f),
-                new Vector2(currentPosition.x + .8f, currentPosition.y - .3f));
+            Collider2D[] collisions;
+
+            if (facingRight)
+                collisions = Physics2D.OverlapAreaAll(new Vector2(currentPosition.x + .05f, currentPosition.y + .2f),
+                    new Vector2(currentPosition.x + 1.0f, currentPosition.y - .4f));
+            else
+                collisions = Physics2D.OverlapAreaAll(new Vector2(currentPosition.x - .05f, currentPosition.y + .2f),
+                    new Vector2(currentPosition.x - 1.0f, currentPosition.y - .4f));
 
             foreach (Collider2D c in collisions)
             {
-                if (c.gameObject.tag == "Enemy")
-                {
-                    Debug.Log(c.name);
+                if (c.gameObject.tag == "Enemy" && c.gameObject.layer == currentLayer)
                     c.gameObject.BroadcastMessage("Death");
-                }
             }
 
             attackCooldown = 0.5f;
@@ -89,9 +92,7 @@ public class PlayerControl : MonoBehaviour
             attackCooldown -= Time.deltaTime;
 
         if (this.transform.position.y < -50)
-        {
             Death();
-        }
     }
  
     void FixedUpdate()
