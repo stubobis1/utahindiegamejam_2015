@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - Zone
-  - Player
   - Enemy
   - Background
   layers:
@@ -20,7 +19,7 @@ TagManager:
   - 
   - Front
   - Back
-  - 
+  - Ghost
   - 
   - 
   - 

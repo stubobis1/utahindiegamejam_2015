@@ -4,6 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
     [HideInInspector]
     public GameObject target;
+    public bool facingRight = false;
 
     public enum ZoneType {
         None,
@@ -25,6 +26,21 @@ public class Enemy : MonoBehaviour {
 	
 	public virtual void Update () {
 
+    }
+
+    public virtual void FixedUpdate() {
+        if (GetComponent<Rigidbody2D>().velocity.x > 0 && !facingRight)
+            Flip();
+        else if (GetComponent<Rigidbody2D>().velocity.x < 0 && facingRight)
+            Flip();
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
     public void Switch(int layer)

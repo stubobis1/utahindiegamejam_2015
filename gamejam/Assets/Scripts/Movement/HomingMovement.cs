@@ -7,6 +7,7 @@ public class HomingMovement : EnemyMovement {
     public bool peekaboo = false;
     float peekabooThreshold = 60.0f;
     bool chasing = false;
+    public float maxHomingDistance = 1000.0f;
     bool targetAcquired = false;
     float retargetTimer = 0.0f;
     Vector2 cachedVelocity;
@@ -15,6 +16,9 @@ public class HomingMovement : EnemyMovement {
         base.Start();
 
         speed = 2.0f;
+
+        if (peekaboo)
+            disabled = true;
 	}
 	
 	public override void Update () {
@@ -32,10 +36,13 @@ public class HomingMovement : EnemyMovement {
             Vector3 playerDirection = target.GetComponent<PlayerControl>().facingRight ?
                 new Vector3(1, 0, 0) : new Vector3(-1, 0, 0);
 
-            if (Vector3.Dot(playerDirection, (target.transform.position - transform.position).normalized) < 0)
+            Vector3 toPlayer = target.transform.position - transform.position;
+
+            if (Vector3.Dot(playerDirection, toPlayer.normalized) < 0)
                 disabled = true;
             else
-                disabled = false;
+                if(toPlayer.magnitude < maxHomingDistance)
+                    disabled = false;
         }
 
         if (!disabled)
