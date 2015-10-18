@@ -11,18 +11,23 @@ public class PlayerControl : MonoBehaviour
     public float maxSpeed = 5f;             // The fastest the player can travel in the x axis.
     public AudioClip[] jumpClips;           // Array of clips for when the player jumps.
     public float jumpForce = 10f;         // Amount of force added when the player jumps.
+    
+    public float switchCooldown;
 
     private Transform groundCheck;          // A position marking where to check if the player is grounded.
     private bool isGrounded = false;
     private grounded groundedScript;
     private Animator anim;                  // Reference to the player's animator component.
 
-    public int currentLayer;
-    float layerSwitchCooldown = 0.0f;
+    
+    float currentSwitchCooldown = 0.0f;
     float attackCooldown = 0.0f;
 
     [HideInInspector]
     public GameManager GM;
+    [HideInInspector]
+    public int currentLayer;
+
     void Awake()
     {
         // Setting up references.
@@ -53,15 +58,15 @@ public class PlayerControl : MonoBehaviour
             groundedScript.isGrounded = false;
         }
 
-        if (layerSwitchCooldown <= 0.0f && Input.GetButtonDown("Fire2"))
+        if (currentSwitchCooldown <= 0.0f && Input.GetButtonDown("Fire2"))
         {
             SwitchLayer();
-            layerSwitchCooldown = 0.5f;
+            currentSwitchCooldown = switchCooldown;
         }
 
-        if (layerSwitchCooldown > 0)
+        if (currentSwitchCooldown > 0)
         {
-            layerSwitchCooldown -= Time.deltaTime;
+            currentSwitchCooldown -= Time.deltaTime;
         }
 
         if(attackCooldown <= 0.0f && Input.GetButtonDown("Fire1"))
@@ -177,7 +182,7 @@ public class PlayerControl : MonoBehaviour
         foreach (Collider2D c in otherZoneCollisions)
             if (c.tag != "Enemy")
             {
-                layerSwitchCooldown = 0.0f;
+                currentSwitchCooldown = 0.0f;
                 return;
             }
 

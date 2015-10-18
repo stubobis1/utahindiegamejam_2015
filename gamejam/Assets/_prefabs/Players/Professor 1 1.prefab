@@ -14,7 +14,6 @@ GameObject:
   - 95: {fileID: 9557912}
   - 60: {fileID: 6081028}
   - 58: {fileID: 5854400}
-  - 114: {fileID: 11454248}
   m_Layer: 8
   m_Name: Professor 1 1
   m_TagString: Player
@@ -67,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.000248413067, y: .0218234248, z: -20}
+  m_LocalPosition: {x: -.000249633769, y: .0184909049, z: -20}
   m_LocalScale: {x: .319999993, y: .319999993, z: .319999993}
   m_Children: []
   m_Father: {fileID: 449280}
@@ -79,7 +78,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.171875, y: 1.625, z: 0}
+  m_LocalPosition: {x: 6.09891701, y: 1.93811893, z: 0}
   m_LocalScale: {x: 3.125, y: 3.125, z: 3.125}
   m_Children:
   - {fileID: 488610}
@@ -116,9 +115,9 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 18.0129185
+  field of view: 21.737051
   orthographic: 1
-  orthographic size: 9.90625
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -162,7 +161,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &5854400
 CircleCollider2D:
@@ -249,10 +248,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9c55f9e2e4bf845a8f21eda023f561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fitType: 0
-  targetPixelHeight: 317
+  fitType: 1
+  targetPixelHeight: 768
   parallaxLayerCount: 10
-  cameraZoom: 2
+  cameraZoom: 1
   pixelatedPostProcessing: 1
   heightError: 0
   showGizmos: 0
@@ -270,24 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
---- !u!114 &11454248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d2ed81fca1ac3749a83e9e78e6d17fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pixelPerfectCamera: {fileID: 11411038}
-  fitType: 1
-  parallaxLayer: 0
-  pixelScale: 1
-  runContinously: 1
-  useParentTransform: 0
-  displayGrid: 0
 --- !u!114 &11481338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,12 +281,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 1
-  moveForce: 200
-  maxSpeed: 10
+  moveForce: 900
+  maxSpeed: .800000012
   jumpClips: []
-  jumpForce: 3000
-  currentLayer: 1
+  jumpForce: 2000
+  switchCooldown: .200000003
   GM: {fileID: 0}
+  currentLayer: 1
 --- !u!124 &12447054
 Behaviour:
   m_ObjectHideFlags: 1
